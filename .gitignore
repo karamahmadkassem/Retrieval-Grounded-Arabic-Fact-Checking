@@ -82,6 +82,9 @@ credentials.json
 results/*
 !results/.gitkeep
 
+# Source verification (regenerate via scripts/verify_arafa_sources.py)
+data/arafa/verification/claims_verification.json
+
 # Temporary files
 *.tmp
 *.bak
