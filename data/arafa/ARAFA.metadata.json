@@ -1,0 +1,245 @@
+{
+  "dataset": "ARAFA",
+  "description": "Arabic fact-checking dataset of claim–evidence pairs",
+  "source_file": "data/arafa/ARAFA.json",
+  "generated_at": "2026-09-05T07:54:31.375873+00:00",
+  "file_size_bytes": 188768278,
+  "records": {
+    "total": 181976,
+    "unique_final_ids": 181976,
+    "final_id_range": {
+      "min": 1,
+      "max": 183312
+    },
+    "duplicate_final_ids": 0
+  },
+  "sources": {
+    "unique_count": 3318,
+    "records_per_source": {
+      "min": 6,
+      "max": 129,
+      "mean": 54.85,
+      "median": 51.0
+    },
+    "top_10_by_record_count": {
+      "1092713": 129,
+      "8064119": 123,
+      "149586": 120,
+      "1554742": 120,
+      "1309": 119,
+      "88891": 119,
+      "65550": 118,
+      "2723564": 118,
+      "16453": 117,
+      "26745": 117
+    }
+  },
+  "judgement": {
+    "counts": {
+      "supported": 111303,
+      "refuted": 42109,
+      "nei": 28564
+    },
+    "percentages": {
+      "supported": 61.1636,
+      "refuted": 23.1399,
+      "nei": 15.6966
+    }
+  },
+  "type": {
+    "counts": {
+      "(null)": 131976,
+      "Temporal Nuance": 15249,
+      "Scope Refinement": 10566,
+      "Qualitative Shift": 9050,
+      "Quantitative Precision": 8274,
+      "Contextual Reframing": 3946,
+      "Relationship Reconfiguration": 2797,
+      "Causation vs. Correlation Logic": 108,
+      "Conditional Logic": 5,
+      "Range Logic": 4,
+      "Duration Logic": 1
+    },
+    "percentages": {
+      "(null)": 72.5238,
+      "Temporal Nuance": 8.3797,
+      "Scope Refinement": 5.8063,
+      "Qualitative Shift": 4.9732,
+      "Quantitative Precision": 4.5468,
+      "Contextual Reframing": 2.1684,
+      "Relationship Reconfiguration": 1.537,
+      "Causation vs. Correlation Logic": 0.0593,
+      "Conditional Logic": 0.0027,
+      "Range Logic": 0.0022,
+      "Duration Logic": 0.0005
+    },
+    "typed_records": 50000,
+    "null_type_records": 131976,
+    "unique_non_null_types": 10
+  },
+  "judgement_by_type": {
+    "(null)": {
+      "nei": 20673,
+      "supported": 111303
+    },
+    "Causation vs. Correlation Logic": {
+      "nei": 18,
+      "refuted": 90
+    },
+    "Conditional Logic": {
+      "nei": 1,
+      "refuted": 4
+    },
+    "Contextual Reframing": {
+      "nei": 902,
+      "refuted": 3044
+    },
+    "Duration Logic": {
+      "refuted": 1
+    },
+    "Qualitative Shift": {
+      "nei": 653,
+      "refuted": 8397
+    },
+    "Quantitative Precision": {
+      "nei": 615,
+      "refuted": 7659
+    },
+    "Range Logic": {
+      "refuted": 4
+    },
+    "Relationship Reconfiguration": {
+      "nei": 301,
+      "refuted": 2496
+    },
+    "Scope Refinement": {
+      "nei": 4140,
+      "refuted": 6426
+    },
+    "Temporal Nuance": {
+      "nei": 1261,
+      "refuted": 13988
+    }
+  },
+  "field_completeness": {
+    "final_id": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "source": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "claim": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "evidence": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "judgement": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "reasoning": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "Entity_in_Claim": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "Co_referenced_in_Evidence": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "Co_referenced_in_Text": {
+      "populated": 181976,
+      "null_or_empty": 0,
+      "missing": 0,
+      "populated_pct": 100.0
+    },
+    "type": {
+      "populated": 50000,
+      "null_or_empty": 131976,
+      "missing": 0,
+      "populated_pct": 27.4762
+    }
+  },
+  "text_length_stats": {
+    "claim": {
+      "count": 181976,
+      "min_chars": 1,
+      "max_chars": 3339,
+      "mean_chars": 93.28,
+      "total_chars": 16974377
+    },
+    "evidence": {
+      "count": 181976,
+      "min_chars": 2,
+      "max_chars": 23483,
+      "mean_chars": 150.7,
+      "total_chars": 27423259
+    },
+    "reasoning": {
+      "count": 181976,
+      "min_chars": 74,
+      "max_chars": 574,
+      "mean_chars": 253.72,
+      "total_chars": 46170279
+    },
+    "Entity_in_Claim": {
+      "count": 181976,
+      "min_chars": 1,
+      "max_chars": 6605,
+      "mean_chars": 15.67,
+      "total_chars": 2851568
+    },
+    "Co_referenced_in_Evidence": {
+      "count": 181976,
+      "min_chars": 1,
+      "max_chars": 6531,
+      "mean_chars": 16.56,
+      "total_chars": 3013446
+    },
+    "Co_referenced_in_Text": {
+      "count": 181976,
+      "min_chars": 1,
+      "max_chars": 6558,
+      "mean_chars": 16.67,
+      "total_chars": 3033175
+    }
+  },
+  "schema": {
+    "expected_fields": [
+      "final_id",
+      "source",
+      "claim",
+      "evidence",
+      "judgement",
+      "reasoning",
+      "Entity_in_Claim",
+      "Co_referenced_in_Evidence",
+      "Co_referenced_in_Text",
+      "type"
+    ],
+    "unexpected_fields": {}
+  }
+}
