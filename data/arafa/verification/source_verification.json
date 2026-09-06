@@ -1313,11 +1313,14 @@
   },
   "9511885": {
     "source": 9511885,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "الخط الزمني لأزمة البحر الأحمر (2024)",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D8%B7_%D8%A7%D9%84%D8%B2%D9%85%D9%86%D9%8A_%D9%84%D8%A3%D8%B2%D9%85%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1_%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1_(2024)",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 9608841,
+    "resolution_notes": "Old title الخط الزمني لأزمة البحر الأحمر (يناير 2024 - مايو 2024) -> الخط الزمني لأزمة البحر الأحمر (2024)"
   },
   "1656": {
     "source": 1656,
@@ -3881,11 +3884,14 @@
   },
   "1194207": {
     "source": 1194207,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "بنو زيان",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86%D9%88_%D8%B2%D9%8A%D8%A7%D9%86",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 497201,
+    "resolution_notes": "Old title الدولة الزيانية -> بنو زيان"
   },
   "2470": {
     "source": 2470,
@@ -12681,11 +12687,14 @@
   },
   "801976": {
     "source": 801976,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "حاصل الذكاء",
+    "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%A7%D8%B5%D9%84_%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "merge",
+    "resolved_pageid": 143900,
+    "resolution_notes": "Original page ID deleted; live article recovered by title lookup from claim evidence (IQ / حاصل الذكاء)."
   },
   "12222": {
     "source": 12222,
@@ -12833,11 +12842,14 @@
   },
   "9614729": {
     "source": 9614729,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "الخط الزمني لانهيار الرعاية الصحية في قطاع غزة",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D8%B7_%D8%A7%D9%84%D8%B2%D9%85%D9%86%D9%8A_%D9%84%D8%A7%D9%86%D9%87%D9%8A%D8%A7%D8%B1_%D8%A7%D9%84%D8%B1%D8%B9%D8%A7%D9%8A%D8%A9_%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9_%D9%81%D9%8A_%D9%82%D8%B7%D8%A7%D8%B9_%D8%BA%D8%B2%D8%A9",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 9587723,
+    "resolution_notes": "Old title الخط الزمني لانهيار الرعاية الصحية في قطاع غزة 2024 -> الخط الزمني لانهيار الرعاية الصحية في قطاع غزة"
   },
   "3649": {
     "source": 3649,
@@ -13481,11 +13493,14 @@
   },
   "8132819": {
     "source": 8132819,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "لوك كيج (مسلسل)",
+    "url": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D9%83_%D9%83%D9%8A%D8%AC_(%D9%85%D8%B3%D9%84%D8%B3%D9%84)",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "title_lookup",
+    "resolved_pageid": 3518432,
+    "resolution_notes": "Original page ID deleted; exact article title recovered from claim evidence."
   },
   "38": {
     "source": 38,
@@ -15561,11 +15576,14 @@
   },
   "9681115": {
     "source": 9681115,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "الإعاقة في الفنون",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D8%B9%D8%A7%D9%82%D8%A9_%D9%81%D9%8A_%D8%A7%D9%84%D9%81%D9%86%D9%88%D9%86",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "merge",
+    "resolved_pageid": 9793704,
+    "resolution_notes": "Original page ID deleted; recovered via Wikipedia full-text search on claim evidence snippet. Article covers Beethoven, Landini, and disability in the arts."
   },
   "8273": {
     "source": 8273,
@@ -16833,11 +16851,14 @@
   },
   "122891": {
     "source": 122891,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "حرب الاستنزاف",
+    "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%86%D8%B2%D8%A7%D9%81",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 10485859,
+    "resolution_notes": "Old redirect title حرب الإستنزاف -> حرب الاستنزاف"
   },
   "2332": {
     "source": 2332,
@@ -17473,11 +17494,14 @@
   },
   "9337221": {
     "source": 9337221,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "فلسطينيون",
+    "url": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%88%D9%86",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 1942389,
+    "resolution_notes": "Old title أصل الفلسطينيين -> فلسطينيون"
   },
   "3964": {
     "source": 3964,
@@ -17793,11 +17817,14 @@
   },
   "1592749": {
     "source": 1592749,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "الطاقة في مصر",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D8%A9_%D9%81%D9%8A_%D9%85%D8%B5%D8%B1",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 2128022,
+    "resolution_notes": "Old title النفط في مصر -> الطاقة في مصر"
   },
   "1751": {
     "source": 1751,
@@ -18441,11 +18468,14 @@
   },
   "9683380": {
     "source": 9683380,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "قائمة العمليات الانتحارية الفلسطينية",
+    "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "merge",
+    "resolved_pageid": 1926969,
+    "resolution_notes": "Standalone article deleted/renamed; intro text now lives on the list article (verified by evidence snippet match)."
   },
   "6863": {
     "source": 6863,
@@ -18601,11 +18631,14 @@
   },
   "4523150": {
     "source": 4523150,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "تاريخ أمريكا الشمالية",
+    "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7_%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "title_lookup",
+    "resolved_pageid": 38617,
+    "resolution_notes": "Original page ID deleted with no redirect; recovered by title lookup from claim evidence about Native Americans and North American history."
   },
   "2626": {
     "source": 2626,
@@ -19881,11 +19914,14 @@
   },
   "3219003": {
     "source": 3219003,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "تاريخ سلطنة عمان",
+    "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%B3%D9%84%D8%B7%D9%86%D8%A9_%D8%B9%D9%85%D8%A7%D9%86",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "merge",
+    "resolved_pageid": 3219004,
+    "resolution_notes": "Original page ID deleted; replacement article at adjacent pageid 3219004 matches claim topic (prehistoric Oman). No Wayback snapshot available."
   },
   "17900": {
     "source": 17900,
@@ -20841,11 +20877,14 @@
   },
   "2486114": {
     "source": 2486114,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "صوفية",
+    "url": "https://ar.wikipedia.org/wiki/%D8%B5%D9%88%D9%81%D9%8A%D8%A9",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 12817,
+    "resolution_notes": "Old title التصوف -> صوفية"
   },
   "31410": {
     "source": 31410,
@@ -21313,11 +21352,14 @@
   },
   "3030964": {
     "source": 3030964,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "لوران نوتال",
+    "url": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D8%B1%D8%A7%D9%86_%D9%86%D9%88%D8%AA%D8%A7%D9%84",
     "extract_chars": 0,
-    "error": "missing_or_invalid_pageid"
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 10082946,
+    "resolution_notes": "Old title نسبية سلم القياس -> لوران نوتال"
   },
   "3586": {
     "source": 3586,
@@ -21961,11 +22003,14 @@
   },
   "2464386": {
     "source": 2464386,
-    "found": false,
-    "title": null,
-    "url": null,
+    "found": true,
+    "title": "إذاعة دولة الكويت",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B0%D8%A7%D8%B9%D8%A9_%D8%AF%D9%88%D9%84%D8%A9_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA",
     "extract_chars": 0,
-    "error": null
+    "error": null,
+    "resolution_method": "redirect",
+    "resolved_pageid": 1064453,
+    "resolution_notes": "Old title إذاعة الكويت -> إذاعة دولة الكويت"
   },
   "3682": {
     "source": 3682,
