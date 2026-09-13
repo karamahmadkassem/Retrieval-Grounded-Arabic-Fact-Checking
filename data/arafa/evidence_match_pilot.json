@@ -1,0 +1,1413 @@
+{
+  "summary": {
+    "total_checked": 200,
+    "exact_match": 123,
+    "fuzzy_match": 75,
+    "no_match": 2,
+    "exact_rate": 0.615,
+    "fuzzy_or_better_rate": 0.99,
+    "fuzzy_threshold_used": 0.75
+  },
+  "results": [
+    {
+      "final_id": 167678,
+      "source": 7857340,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في 27 أبريل، أُعلن أنه سيُلغى إصدار روز أوف ترالي 2020 لأول مرة في تاريخها البال"
+    },
+    {
+      "final_id": 29190,
+      "source": 8049624,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كانت هناك صور يتم مشاركتها عبر وسائل التواصل الاجتماعي، مما أدى إلى نسخ مقلدة في"
+    },
+    {
+      "final_id": 6557,
+      "source": 127732,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وُلدت هيلاري ديان رودهام في السادس والعشرين من أكتوبر لعام 1947، بمشفى إيدج ووتر"
+    },
+    {
+      "final_id": 72144,
+      "source": 2905756,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "اما سعيد السبع فقد ترك منظمة التحرير بعد خلافات عميقة مع ياسر عرفات وتوجه إلى عر"
+    },
+    {
+      "final_id": 64243,
+      "source": 24560,
+      "match_type": "fuzzy",
+      "similarity": 0.964,
+      "evidence_preview": "كانت الفضّة واحدةً من الفلزّات «العتيقة» التي اكتشفت وعرفها الإنسان منذ التاريخ "
+    },
+    {
+      "final_id": 58559,
+      "source": 132002,
+      "match_type": "fuzzy",
+      "similarity": 0.974,
+      "evidence_preview": "تم بناء عدد قليل من محطات الطاقة التي تعمل بالفحم ذات الدورة المتكاملة للتغويز ("
+    },
+    {
+      "final_id": 36625,
+      "source": 180828,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كانت التجارب السابقة قد أظهرت أن كثافة الأصوات وحدّتها تبلغ أقصاها على عمق أقل م"
+    },
+    {
+      "final_id": 26874,
+      "source": 7355053,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في الثاني من يونيو، أكدت وزارة الصحة والعافية تسجيل حالتين إضافيتين ليبلغ تعداد "
+    },
+    {
+      "final_id": 177472,
+      "source": 26862,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ورغم مخاوفه فلقد كان لأولاده ولأحفاده مجالات عمل متميزة. ومن أبنائه الذين ظلوا ع"
+    },
+    {
+      "final_id": 143013,
+      "source": 5134786,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في مارس 2016، أظهرت إحصائيات نشرتها سجلات اسكتلندا الوطنية أن 1,671 حالة زواج مث"
+    },
+    {
+      "final_id": 22796,
+      "source": 16181,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في مارس تحول هذا المزاج إلى يأس حاول دفنه في الشراب والشغب حتى أن صاحبة المنزل ه"
+    },
+    {
+      "final_id": 154846,
+      "source": 7831028,
+      "match_type": "fuzzy",
+      "similarity": 0.938,
+      "evidence_preview": "في 14 مايو 2020، بدأ برنامج الأمم المتحدة المشترك لفيروس نقص المناعة البشرية/الإ"
+    },
+    {
+      "final_id": 110651,
+      "source": 9052,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في النباتات ذات التمثيل الضوئي رباعي الكربون فإنّ الصوديوم يعدّ من المغذيات الأص"
+    },
+    {
+      "final_id": 8332,
+      "source": 8723898,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في أغسطس 1990 اندلع تمرد معروف باسم ثورة السجل في كرواتيا وتركز على المناطق ذات "
+    },
+    {
+      "final_id": 7812,
+      "source": 147242,
+      "match_type": "fuzzy",
+      "similarity": 0.952,
+      "evidence_preview": "في عام 2000 أصبح إتش لي سكوت رئيسًا ومديرًا تنفيذيًا لشركة وول مارت وزادت مبيعات"
+    },
+    {
+      "final_id": 24567,
+      "source": 54716,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ويصنف الحرم الجامعي التابع للجامعة بأنه من ضمن فئة الخمس نجوم، وهي أعلى فئة يمكن"
+    },
+    {
+      "final_id": 57360,
+      "source": 1989821,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في منتزه شيتوان الملكي الوطني، بدأت الببور القريبة من البلوغ التي يتم تعقبها عبر"
+    },
+    {
+      "final_id": 61036,
+      "source": 1768143,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وفي عام 2013 ذكرت الأمم المتحدة للمرأة أنه على الرغم من أن 115 بلدًا على الأقل ت"
+    },
+    {
+      "final_id": 132523,
+      "source": 7331753,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كان من المقرر أن تقام دورة الألعاب الأولمبية لكرة الماء عام 2020 في مدينة ترييست"
+    },
+    {
+      "final_id": 157869,
+      "source": 4255,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "الفلسفة هي مجال دراسة حيث يحاول الإنسان فهم الحقائق الجوهرية حول ذاته والعالم من"
+    },
+    {
+      "final_id": 6957,
+      "source": 44760,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "والخياشيم نفسها لا يكسوها جراب، بل يُعيد الجسد امتصاصها قبيْل انتقال الحيوان من "
+    },
+    {
+      "final_id": 147178,
+      "source": 387012,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كان لقطار بوني إكسبرس طريق يمتد من محطة جنوة عبر ممر داغيت إلى محطة فرايديز ومحط"
+    },
+    {
+      "final_id": 52170,
+      "source": 7457226,
+      "match_type": "fuzzy",
+      "similarity": 0.952,
+      "evidence_preview": "وقد خفّضت العديد من الصحف من خاصية بيوول (paywall) (وهو برنامج يمنع دخول إلى الم"
+    },
+    {
+      "final_id": 170428,
+      "source": 11315,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "علم محمد أحمد أن طريقه إلى إعادة الإسلام إلى سيرته الأولى يتطلب منه أن يحتل مركز"
+    },
+    {
+      "final_id": 142902,
+      "source": 803731,
+      "match_type": "fuzzy",
+      "similarity": 0.846,
+      "evidence_preview": "كما شارك صباح فخري في ندوة عِلمية عن حياة فخري البارودي أقامتها جمعية أصدقاء دمش"
+    },
+    {
+      "final_id": 110021,
+      "source": 3644698,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تضيف العاصفة الجيومغناطيسية الحرارة إلى الغلاف الحراري، مما يؤدي إلى توسع الغلاف"
+    },
+    {
+      "final_id": 57833,
+      "source": 3778396,
+      "match_type": "fuzzy",
+      "similarity": 0.994,
+      "evidence_preview": "وقد تم استخدام عدد من هذه الأنظمة تجريبيا في العشرينيات وكان الأكثر شهرة جون لوج"
+    },
+    {
+      "final_id": 117804,
+      "source": 907979,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "سجل هدفين في الفوز 5–1 على دورتموند بعد خمسة أيام، ليصبح مجموع أهدافه 12 هدف في "
+    },
+    {
+      "final_id": 154524,
+      "source": 1661933,
+      "match_type": "fuzzy",
+      "similarity": 0.891,
+      "evidence_preview": "أعلن أوزبودون أن المواد التي لا يُمكن أن تُعدل تتم المحافظة عليها، وأعلن عن تقيي"
+    },
+    {
+      "final_id": 72973,
+      "source": 1103165,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "انضمت مليشيات CNT إلى الجيش الجمهوري الإسباني في 1937."
+    },
+    {
+      "final_id": 1704,
+      "source": 190343,
+      "match_type": "fuzzy",
+      "similarity": 0.879,
+      "evidence_preview": "عقب ظهور الإسلام في القرن السابع، تعاون أغلب المسيحيون المشرقيون من عرب وسواهم م"
+    },
+    {
+      "final_id": 41899,
+      "source": 23628,
+      "match_type": "fuzzy",
+      "similarity": 0.895,
+      "evidence_preview": "واراه تلاميذه التراب باحتفال مهيب جدير بما تنطوي عليه قلوبهم من حب له وجلال."
+    },
+    {
+      "final_id": 110832,
+      "source": 1001269,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "استلهمت الاحتجاجات من احتجاجات مماثلة في جميع أنحاء الشرق الأوسط وشمال إفريقيا."
+    },
+    {
+      "final_id": 89241,
+      "source": 8581081,
+      "match_type": "fuzzy",
+      "similarity": 0.942,
+      "evidence_preview": "'قدم هارفي دينتأول ظهور له في فيلم باتمان عام 1989.'"
+    },
+    {
+      "final_id": 72889,
+      "source": 9602261,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وأعلن حزب الله مقتل اثنان من مقاتليه نتيجة الهجمات."
+    },
+    {
+      "final_id": 40804,
+      "source": 1466832,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ويعتبر المسيحيون العرب خصوصًا الموارنة إلى جانب الأرمن في المكسيك «أغنياء ومتعلّ"
+    },
+    {
+      "final_id": 56489,
+      "source": 306853,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ولد ديمتري ميدفيديف يوم 14 سبتمبر 1965 في لينينغراد، في الاتحاد السوفيتي."
+    },
+    {
+      "final_id": 88283,
+      "source": 12813,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "بلغ عدد سكان المدينة حوالي 1,316,000 نسمة وفقاً لإحصائية يوليو 2013 بكثافة سُكان"
+    },
+    {
+      "final_id": 26799,
+      "source": 7170892,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وفي يناير وفبراير 1916 انتهت معركة أرضروم أيضًا بانتصار الروس. سقطت تلك المدينة،"
+    },
+    {
+      "final_id": 24318,
+      "source": 326812,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تزوجت مرة واحدة مثل أي امرأة شابة، ولكنها عاشت بعد ذلك بشكل مستقل."
+    },
+    {
+      "final_id": 99642,
+      "source": 1056849,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وأعباء الكتابة بين الأيدي تختلف بالنسبة لتصميمات لوحة المفاتيح، ففي لوح مفاتيح ك"
+    },
+    {
+      "final_id": 25359,
+      "source": 13804,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تم وضع حجر الأساس لإنشاء محطة مترو مدينة الرياض بالمركز المالي بالمملكة العربية "
+    },
+    {
+      "final_id": 94151,
+      "source": 2332,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يوجد في المدينة ملعبا بلديا يتسع لعدة الآف."
+    },
+    {
+      "final_id": 90212,
+      "source": 3786,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "البرلمان الأوروبي واستنادا إلى القانون رأى أن الصيد من قبل السفن الأوروبية في ال"
+    },
+    {
+      "final_id": 158317,
+      "source": 2340813,
+      "match_type": "fuzzy",
+      "similarity": 0.935,
+      "evidence_preview": "تسمى الاسلحة المشمولة في عملية الاندماج بالقنبلة الهيدروجينية."
+    },
+    {
+      "final_id": 69389,
+      "source": 1712319,
+      "match_type": "fuzzy",
+      "similarity": 0.927,
+      "evidence_preview": "تميز مناندروس بالواقعية في رسم الشخصيات، وينفرد بالموضوع المستمد من الواقع المحل"
+    },
+    {
+      "final_id": 11391,
+      "source": 7350358,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "أعلنت بكين وغوانغدونغ عن ثلاث حالات وثلاث عشرة حالةً إضافيةً مؤكدةً مخبريًا، على"
+    },
+    {
+      "final_id": 120482,
+      "source": 13244,
+      "match_type": "fuzzy",
+      "similarity": 0.968,
+      "evidence_preview": "كثير من الأراضي الزراعية الصالحة لزراعة الفواكة والخضار أقتطعت لزراعة القات للمد"
+    },
+    {
+      "final_id": 140617,
+      "source": 884108,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "نشاط التعدين في الجزائر متنوع جدا، فهناك أكثر من 30 معدن المستخدمة في مختلف الحا"
+    },
+    {
+      "final_id": 32729,
+      "source": 18635,
+      "match_type": "fuzzy",
+      "similarity": 0.872,
+      "evidence_preview": "الغيتار الكهربائي يحتوي على التقاطات ويتم توصيله بمكبر للصوت ومكبر الصوت للعروض "
+    },
+    {
+      "final_id": 99277,
+      "source": 66344,
+      "match_type": "fuzzy",
+      "similarity": 0.924,
+      "evidence_preview": "صرح أستاذ التاريخ المشارك في جامعة كريتون، جون كالفيرت، أن 'تهديد القاعدة' قد 'ا"
+    },
+    {
+      "final_id": 20662,
+      "source": 18884,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تلتصق بالسطوح الخارجية للأقسام العديدة من الشبكة الهيولية الباطنة أعداد كبيرة من"
+    },
+    {
+      "final_id": 144765,
+      "source": 7348046,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يوجد في نيويورك أكبر عدد من الحالات المؤكدة مقارنة بباقي الولايات في الولايات ال"
+    },
+    {
+      "final_id": 76901,
+      "source": 9485660,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تستفيد الخيول من ما يصل إلى 8% من الدهون في نظامها الغذائي، ولكن زيادة الدهون لا"
+    },
+    {
+      "final_id": 164849,
+      "source": 9331653,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تم استخدام الهاتات كملحقات لتطور المرض، وتحديدًا في الاضطرابات التنكسية العصبية."
+    },
+    {
+      "final_id": 162196,
+      "source": 8117926,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "بعد لم الشمل مع الدكتور لارابي، ذهبت أكيلا إلى واشنطن العاصمة معه، مع تانيا وجور"
+    },
+    {
+      "final_id": 94847,
+      "source": 7857214,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في شهر فبراير من العام 1920، أثناء محاضرة الدكتور موراي ليزلي عن انتفاضة النساء "
+    },
+    {
+      "final_id": 151400,
+      "source": 42946,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "نصّ قانون 2005 على إنشاء منصب الأمين العام في كل واحدة من العتبات الخمس الأساسية"
+    },
+    {
+      "final_id": 50453,
+      "source": 277599,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "بين عامي 1865 و 1868 شغل ميل منصب اللورد رئيس الجامعة لجامعة سانت أندروز."
+    },
+    {
+      "final_id": 18239,
+      "source": 194265,
+      "match_type": "fuzzy",
+      "similarity": 0.972,
+      "evidence_preview": "تشير الأدلة والآثار والتنقيبات إلى وجود أقدم المناطق المأهولة بالبشر منذ قبل الت"
+    },
+    {
+      "final_id": 12013,
+      "source": 3897366,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "برافوس (Braavos) هي مدينة مميزة من ضمن المدن الحرة، إذ إنها لم تكن مستعمرة فالير"
+    },
+    {
+      "final_id": 173417,
+      "source": 1673186,
+      "match_type": "fuzzy",
+      "similarity": 0.915,
+      "evidence_preview": "كانت فرنسا في معظم فترات حكم لويس الرابع عشر القوة الرائدة في أوروبا، وانخرطت في"
+    },
+    {
+      "final_id": 59788,
+      "source": 1776510,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يبين النظام الموازنات المستقلة، عامة أو محلية، وتجرى عليها الأحكام الخاصة بالموا"
+    },
+    {
+      "final_id": 75908,
+      "source": 1681662,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في عام 1930، قامت إحدى شركات تصنيع الواقي الذكري برفع دعوى قضائية ضد أخرى فيما ي"
+    },
+    {
+      "final_id": 20922,
+      "source": 466453,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "فضحّت حرب الشتاء فوضى الجيش الأحمر والحلفاء وعجزهما على حد سواء."
+    },
+    {
+      "final_id": 61070,
+      "source": 192401,
+      "match_type": "fuzzy",
+      "similarity": 0.819,
+      "evidence_preview": "في مايو، أعلنت الفرقة عن فيلمها السينمائي \\\"عالم التوابل\\\" في مهرجان كان السينما"
+    },
+    {
+      "final_id": 26482,
+      "source": 3533694,
+      "match_type": "fuzzy",
+      "similarity": 0.905,
+      "evidence_preview": "يشير كتاب 'المعركة الاخيرة' لكورنيليوس رايان إلى 7 ملايين عامل أجنبي تم جلبهم قس"
+    },
+    {
+      "final_id": 99694,
+      "source": 1108139,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "هذه المحكمة أسست مبدئياً للتعامل مع الشكاوي ضد الحكومة، ولكن اعتباراً من عام 201"
+    },
+    {
+      "final_id": 72916,
+      "source": 1001785,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "الانتفاضة السورية أو ثورة الأحرار السورية هي انتفاضة شعبية انطلقت يوم الجمعة 18 "
+    },
+    {
+      "final_id": 118905,
+      "source": 708206,
+      "match_type": "fuzzy",
+      "similarity": 0.958,
+      "evidence_preview": "إن الحياة السياسية المبكرة لهذه العشيرة يكتنفها الغموض، وهي أدنى إلى الأساطير من"
+    },
+    {
+      "final_id": 166696,
+      "source": 4978885,
+      "match_type": "fuzzy",
+      "similarity": 0.878,
+      "evidence_preview": "آل الأسير وفقًا للمُؤرِّخ البيروتي الدكتور حسَّان حلَّاق يعودون بجُذُورهم إلى ال"
+    },
+    {
+      "final_id": 95685,
+      "source": 244261,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "لكنهم لم يتمكنوا من الاستيلاء على البصرة لوجود العثمانيين فيها، لكنهم أستطاعوا ا"
+    },
+    {
+      "final_id": 42684,
+      "source": 1181643,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يسبب سوء المعاملة 19٪ من حالات إصابات الدماغ الرضية لدى الأطفال، ومعدل الوفيات أ"
+    },
+    {
+      "final_id": 97087,
+      "source": 2495134,
+      "match_type": "fuzzy",
+      "similarity": 0.943,
+      "evidence_preview": "الرُّتبة الجوارح الفصيلة البازيَّة فصيلة البيزان هي إحدى فصائل الجوارح، وهي تضم "
+    },
+    {
+      "final_id": 93179,
+      "source": 5060351,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وبدأت الهيئات الحرفية والتجارية بالسخط من ازدياد نفوذ اتحاد العمال العام (UGT) د"
+    },
+    {
+      "final_id": 54967,
+      "source": 1468846,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "أدت الاضطرابات إلى ردود فعل كبيرة على المستوى المحلي والدولي."
+    },
+    {
+      "final_id": 175760,
+      "source": 125185,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كانت المدينة الأكثر اكتظاظًا بالسكان في الهند وفقًا للتعداد السكاني للحكومة الهن"
+    },
+    {
+      "final_id": 70033,
+      "source": 7349659,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في اليوم نفسه، جرى تعيين 500 ضابط شرطة إضافي للقيام بدوريات في المناطق المحجورة "
+    },
+    {
+      "final_id": 180565,
+      "source": 1114701,
+      "match_type": "fuzzy",
+      "similarity": 0.92,
+      "evidence_preview": "وفي فرنسا أيضاً تم نشر عدد من المنشورات المماثلة للتي نشرت في ألمانيا والولايات "
+    },
+    {
+      "final_id": 169943,
+      "source": 1650635,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "أدى إدخال الطاقة البخارية (التي يغذيها الفحم بشكل أساسي) والآلات التي تعمل بالطا"
+    },
+    {
+      "final_id": 18723,
+      "source": 6568,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "البرتغالية الخاصة، وهي منطقة بحرية تمتلك فيها البرتغال حقوقاً خاصة في استكشاف وا"
+    },
+    {
+      "final_id": 159734,
+      "source": 865496,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "سجل ميسي هدفه الثاني في الدقيقة 108 ليمنح الأرجنتين التقدم مرة أخرى 3–2."
+    },
+    {
+      "final_id": 166511,
+      "source": 2236973,
+      "match_type": "fuzzy",
+      "similarity": 0.882,
+      "evidence_preview": "استدعي كين للانضمام لتشكيلة المنتخب الوطني الإنجليزي المكونة من 23 لاعباً المشار"
+    },
+    {
+      "final_id": 44908,
+      "source": 1531962,
+      "match_type": "fuzzy",
+      "similarity": 0.969,
+      "evidence_preview": "وقد كانت السلحفاة هاريت، وهي عينة موجودة في حديقة حيوان أستراليا، أكبر سلاحف غال"
+    },
+    {
+      "final_id": 140070,
+      "source": 8064119,
+      "match_type": "fuzzy",
+      "similarity": 0.986,
+      "evidence_preview": "نشأت الثورة الجغرافية المكانية في رسم خرائط حرائق الغابات والملاحة عندما تقاربت "
+    },
+    {
+      "final_id": 64222,
+      "source": 22436,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "التليف الكيسي هو مرض وراثي، أي يتسبب فيه خلل في الجينات الموروثة عن الأم والأب."
+    },
+    {
+      "final_id": 42880,
+      "source": 149413,
+      "match_type": "fuzzy",
+      "similarity": 0.953,
+      "evidence_preview": "افتُتح الملعب في عام 2016 باسم «أكبر مشروع للأشغال العامة في مينيسوتا»، ويحتوي ع"
+    },
+    {
+      "final_id": 121225,
+      "source": 42153,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وشهد اليوم الأول من المهرجان سباق الهجن السنوي الكبير الحادي والثلاثين."
+    },
+    {
+      "final_id": 99518,
+      "source": 8502962,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يمكن للناشر أحيانًا تأمين الحقوق الدائمة لممتلكات مرخصة، كما في حالة Ubisoft الت"
+    },
+    {
+      "final_id": 70812,
+      "source": 299752,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "شاركت قوات الولايات المتحدة الأمريكية وكل من فيتنام الشمالية وفيتنام الجنوبية مب"
+    },
+    {
+      "final_id": 167831,
+      "source": 1494972,
+      "match_type": "fuzzy",
+      "similarity": 0.919,
+      "evidence_preview": "أصيب حوالي 100 متظاهر بالاختناق و4 على الأقل بالرصاص الحي في صنعاء، وفي ذمار نحو"
+    },
+    {
+      "final_id": 181779,
+      "source": 45714,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "استنتج السوفيات أنهم تحت ضغوط هائلة بسبب الوقت والموارد التي قد تضيع، وأمروا بتج"
+    },
+    {
+      "final_id": 146052,
+      "source": 44760,
+      "match_type": "fuzzy",
+      "similarity": 0.911,
+      "evidence_preview": "وأصدر الاتحاد العالمي للحفاظ على الطبيعة في سنة 2006 تقريراً يشيرُ إلى أن الطيور"
+    },
+    {
+      "final_id": 57616,
+      "source": 294625,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وظل مدفن علي مجهولا إلى أن أفصح عن مكانه جعفر الصادق في وقت لاحق خلال الخلافة ال"
+    },
+    {
+      "final_id": 180845,
+      "source": 5208108,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وقدرت الأمم المتحدة بأن هناك 100000 جورجي هُجروا نتيجة لحرب أوسيتيا الجنوبية عام"
+    },
+    {
+      "final_id": 85055,
+      "source": 8068,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يقع الوادي بين ثلاثة جبال ذات أشجار كثيفة تتخللها عيون من الماء. يحرص اليزيديون "
+    },
+    {
+      "final_id": 14664,
+      "source": 1007058,
+      "match_type": "fuzzy",
+      "similarity": 0.933,
+      "evidence_preview": "وفي سنة 2011 صنفت بلومبيرغ بيزنس ويك اللغة العربية في المرتبة الرابعة من حيث الل"
+    },
+    {
+      "final_id": 60089,
+      "source": 3886,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يبلغ عدد سكانها أكثر من (38,069,067) نسمة."
+    },
+    {
+      "final_id": 8415,
+      "source": 884108,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "النظام السياسي في الجزائر جمهوري ذو طابع ديمقراطي، بدستور، وقد أقر تعديل الدستور"
+    },
+    {
+      "final_id": 82741,
+      "source": 1745825,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كان المصنع بمساحة 28 × 80 قدم (8.5 م × 24 م) مبنى خشبي من طابق واحد. تم زيادة عد"
+    },
+    {
+      "final_id": 105209,
+      "source": 1459454,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تُستخدم أجهزة دعم الحياة للحفاظ على وظيفة المريض الجسدية. ويشمل ذلك أجهزة التهوي"
+    },
+    {
+      "final_id": 70233,
+      "source": 9027,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "طلبت السلطات الصحية البوروندية في الثمانينيات من برنامج الأمم المتحدة الإنمائي د"
+    },
+    {
+      "final_id": 17351,
+      "source": 3695979,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "قال المرصد السوري لحقوق الإنسان ان المتظاهرين طالبوا بازالة مصطفى دابي كقائد لفر"
+    },
+    {
+      "final_id": 55353,
+      "source": 296060,
+      "match_type": "fuzzy",
+      "similarity": 0.985,
+      "evidence_preview": "زاوية الحاج امحمد الــزبـــده (بيت الحاج امحمد الزبدة): ولد شيخها حوالي 1820 م ت"
+    },
+    {
+      "final_id": 148733,
+      "source": 3006488,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "خدمت حوالي 100,000 امرأة مع 600,000 رجل في جيش التحرير الوطني اليوغوسلافي تيتو. "
+    },
+    {
+      "final_id": 82537,
+      "source": 1452567,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ومن التعديلات العظيمة التي أدخلها علماء الرياضيات المسلمون على النظام الهندي الت"
+    },
+    {
+      "final_id": 55784,
+      "source": 6889,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وتعتبر ميناؤها، ميناء عنابة من أهم موانئ الجزائر على البحر الأبيض المتوسط."
+    },
+    {
+      "final_id": 171890,
+      "source": 456540,
+      "match_type": "fuzzy",
+      "similarity": 0.984,
+      "evidence_preview": "وُصفت براعة كارلسون في نهاية اللعب بأنها بين الأفضل في التاريخ."
+    },
+    {
+      "final_id": 130917,
+      "source": 8457845,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في دراسة أجريت حول عام 2002, قدرت نسبة الجنس الطبيعي عند الولادة ضمن نطاق ضيق من"
+    },
+    {
+      "final_id": 103759,
+      "source": 164957,
+      "match_type": "fuzzy",
+      "similarity": 0.891,
+      "evidence_preview": "إن الدراسات المتعلقة بالفيلم إيجابية بشكل عام."
+    },
+    {
+      "final_id": 168580,
+      "source": 3610,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يحوي الإنسان البالغ على قرابة 4 غرامات من الحديد، أي ما يعادل 0.005% من وزن الجس"
+    },
+    {
+      "final_id": 120332,
+      "source": 819823,
+      "match_type": "fuzzy",
+      "similarity": 0.916,
+      "evidence_preview": "قرر مدرب منتخب صربيا رادومير أنتيتش خوض 5 مباريات ودية استعدادًا للبطولة حيث است"
+    },
+    {
+      "final_id": 37498,
+      "source": 1008248,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "بدأت بَث القناة في مارس عام 2000 بفقرة أطفال ضمن تلفزيون البحرين الحكومي وانطلقت"
+    },
+    {
+      "final_id": 69483,
+      "source": 1840764,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يجمع الطبخ المسيحي بين طعام العديد من الثقافات التي عاش فيها المسيحيون."
+    },
+    {
+      "final_id": 36649,
+      "source": 1942389,
+      "match_type": "fuzzy",
+      "similarity": 0.878,
+      "evidence_preview": "أصدر المؤتمر العربي الفلسطيني الأول في شباط/ فبراير 1919 بيانه الأول المعادي للص"
+    },
+    {
+      "final_id": 64698,
+      "source": 5870748,
+      "match_type": "fuzzy",
+      "similarity": 0.915,
+      "evidence_preview": "الصراع الإسرائيلي  الفلسطيني والنزاع العربي الإسرائيلي موجودان منذ نشأة الصهيوني"
+    },
+    {
+      "final_id": 147210,
+      "source": 1224638,
+      "match_type": "fuzzy",
+      "similarity": 0.914,
+      "evidence_preview": "تزوج من ماري نيلي مونشابلون في عام 1856، والتي سيرزق منها بخمسة أطفال."
+    },
+    {
+      "final_id": 141338,
+      "source": 1539,
+      "match_type": "fuzzy",
+      "similarity": 0.892,
+      "evidence_preview": "يتراوح الضغط الجوي على السطح اليوم من 30 باسكال (0.030 كيلو باسكال) على جبل أولي"
+    },
+    {
+      "final_id": 68923,
+      "source": 9255770,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كان الموضوع الرئيسي للمجلدات اللاحقة في سلسلة تاريخ الحرب العالمية الثانية هو أن"
+    },
+    {
+      "final_id": 153297,
+      "source": 68476,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "أسس 1991 المؤتمر الشعبي العربي الإسلامي ليشكل منبرا للقضايا الإسلامية تتلاقى فيه"
+    },
+    {
+      "final_id": 112358,
+      "source": 144455,
+      "match_type": "fuzzy",
+      "similarity": 0.87,
+      "evidence_preview": "بعد تلاوة لائحة الاتهام قام المهداوي بمهمة الدفاع التي لم يتمكن من إكمالها بسبب "
+    },
+    {
+      "final_id": 153021,
+      "source": 8759597,
+      "match_type": "fuzzy",
+      "similarity": 0.975,
+      "evidence_preview": "كانت بطولة كأس العالم للسباحة لعام، والتي كان من المزمع أن تستضيفها سنغافورة، وا"
+    },
+    {
+      "final_id": 104747,
+      "source": 7702543,
+      "match_type": "fuzzy",
+      "similarity": 0.945,
+      "evidence_preview": "وفي أواخر مايو وأوائل يونيو 2020، أعلن أعضاء مجلس الوزراء البريطاني أيضًا عن تدا"
+    },
+    {
+      "final_id": 94942,
+      "source": 8563771,
+      "match_type": "fuzzy",
+      "similarity": 0.877,
+      "evidence_preview": "* شراسة التنافس جعلت من النادر أن يمثل اللاعب كلا الفريقين خلال مسيرته. كان من ب"
+    },
+    {
+      "final_id": 57539,
+      "source": 2375242,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ستدخل هذه الاتفاقية حيز التنفيذ يوم التوقيع عليها."
+    },
+    {
+      "final_id": 36308,
+      "source": 6676734,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تطلب روسيا أحيانًا من الأجانب الذين تتجاوز مدة إقامتهم الحصول على تأشيرات خروج ل"
+    },
+    {
+      "final_id": 133617,
+      "source": 4111291,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "اقترح مجلس الشيوخ على أوكتافيان، المنتصر في الحروب الأهلية في روما، أن يتولى مرة"
+    },
+    {
+      "final_id": 129419,
+      "source": 4228,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وكان كارتر يتابع اتفاقات كامب ديفيد، ومعاهدات قناة بنما، والجولة الثانية من محاد"
+    },
+    {
+      "final_id": 23837,
+      "source": 112193,
+      "match_type": "fuzzy",
+      "similarity": 0.909,
+      "evidence_preview": "تعتبر هذه الحيوانات معرضة بشكل خاص للإصابة بالديدان الشعرية (باللاتينية: 'Trichi"
+    },
+    {
+      "final_id": 12352,
+      "source": 7857419,
+      "match_type": "fuzzy",
+      "similarity": 0.925,
+      "evidence_preview": "قدر استطلاع أجرته وكالة أسوشيتد برس والمركز الوطني لأبحاث الرأي في جامعة شيكاغو "
+    },
+    {
+      "final_id": 28749,
+      "source": 491050,
+      "match_type": "fuzzy",
+      "similarity": 0.91,
+      "evidence_preview": "يمكن أن تتطلب مشاركة الملفات من نظير إلى نظير (P2P) وتدفق الفيديو عالي الجودة مع"
+    },
+    {
+      "final_id": 40112,
+      "source": 394645,
+      "match_type": "fuzzy",
+      "similarity": 0.933,
+      "evidence_preview": "'فنحن نعرف الكثير' عن يسوع. يعتقد وذرنجتون أنه في الوقت الذي نادرًا ما يتفق العل"
+    },
+    {
+      "final_id": 164536,
+      "source": 9218037,
+      "match_type": "fuzzy",
+      "similarity": 0.974,
+      "evidence_preview": "بريت تسيديك فشالوم، التحالف اليهودي من أجل العدالة والسلام، هو منظمة وطنية لليهو"
+    },
+    {
+      "final_id": 41984,
+      "source": 3226163,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "أسفرت الحملات العسكرية في أوروبا عن الإستيلاء على عدد كبير من السفن والتي كان ال"
+    },
+    {
+      "final_id": 179759,
+      "source": 41863,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ظهر نجم يوسف في معركة الواحات التي وقعت عام 448 هـ الموافق 1056، فقد كان قائدًا "
+    },
+    {
+      "final_id": 110713,
+      "source": 909723,
+      "match_type": "fuzzy",
+      "similarity": 0.955,
+      "evidence_preview": "للشيخ مكتبة ضَخْمة تحوي آلافَ الكتب في مختلف المجالات الشرعيَّة والأدبية والاجتم"
+    },
+    {
+      "final_id": 156398,
+      "source": 2270,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في نوفمبر 1918 وافقت قوى المركز على هدنة لوقف القتال في الحرب العالمية الأولى، و"
+    },
+    {
+      "final_id": 16654,
+      "source": 8583421,
+      "match_type": "none",
+      "similarity": 0.736,
+      "evidence_preview": "في عام 2019، استجاب أعضاء مشروع جامعة رين للدعوة لتقديم مشاريع من كليات الأبحاث "
+    },
+    {
+      "final_id": 100911,
+      "source": 1838139,
+      "match_type": "fuzzy",
+      "similarity": 0.898,
+      "evidence_preview": "'غاتسبي العظيم' تمنت شخصية ديزى بتشنان أمنية شبيهة لابنتها."
+    },
+    {
+      "final_id": 100086,
+      "source": 3307288,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "طوّرت فرنسا إمبراطوريتها الاستعمارية الأولى في آسيا وأفريقيا وفي الأمريكتين."
+    },
+    {
+      "final_id": 156261,
+      "source": 592370,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وتعتبر أعماله هي الأساس الذي أعتمد عليه اللاهوتيون الغربيون في انتقاد الإسلام."
+    },
+    {
+      "final_id": 122743,
+      "source": 745521,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كذلك أورد القرآن الكريم القصة في سورة نوح، وكيف دعا النبي نوح على قومه بالهلاك ب"
+    },
+    {
+      "final_id": 138753,
+      "source": 16236,
+      "match_type": "fuzzy",
+      "similarity": 0.985,
+      "evidence_preview": "وافق السُلطانان جهانكير وبُرهان على المُعاهدة، وكافأ السُلطان ابنه خُرَّم مُحمَّ"
+    },
+    {
+      "final_id": 65953,
+      "source": 3856138,
+      "match_type": "fuzzy",
+      "similarity": 0.893,
+      "evidence_preview": "كوسودا ريكوميتشي هو أحد أعضاء المنظمة، تم إرساله لمستشفى هايدو من أجل البحث عن ك"
+    },
+    {
+      "final_id": 145075,
+      "source": 405914,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "النماذج المصنوعة في مارتوريل هي: ليون 5 بي، ليون سبورتستورر، كوبرا ليون، كوبرا ل"
+    },
+    {
+      "final_id": 3010,
+      "source": 48233,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "استطاع المقتفي لأمر الله أن يستقل بحكم بغداد وجوارها عن السلاجقة المشتغلين بمحار"
+    },
+    {
+      "final_id": 179707,
+      "source": 22320,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في ألمانيا وبسبب الوضعية القانونية التي تسمح بمنع كل من يُعادي السامية فقد تم من"
+    },
+    {
+      "final_id": 30035,
+      "source": 33860,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كما قد تُقلل بعض الأطعمة المحتوية على مركبات الفلافونويد مثل الكاكاو والشاي من خ"
+    },
+    {
+      "final_id": 180083,
+      "source": 1471381,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وكانت لونا 16 أول مسبار روبوتي يهبط على القمر ويجلب معه عينة من تربة القمر إلى ا"
+    },
+    {
+      "final_id": 140812,
+      "source": 1003196,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "حاز على ست جوائز هي :جائزة ستالين (في السنوات 1943، 1946، 1947 و1951م) وجائزة لي"
+    },
+    {
+      "final_id": 69993,
+      "source": 7131519,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وفي العام 2009 قدمت المخرجة السعودية عهد كامل فيلم قصير بعنوان «القندرجي» من بطو"
+    },
+    {
+      "final_id": 168083,
+      "source": 490875,
+      "match_type": "fuzzy",
+      "similarity": 0.881,
+      "evidence_preview": "لعبت الدول الأجنبية دورًا كبيرًا في تغذية الأحقاد الطائفية، فقام البريطانيون، بع"
+    },
+    {
+      "final_id": 89221,
+      "source": 8581081,
+      "match_type": "fuzzy",
+      "similarity": 0.936,
+      "evidence_preview": "في 'الجدول الزمني البديل فلاش بوينت Flashpoint'، هارفيث دينت هو قاضٍ. عندما يختط"
+    },
+    {
+      "final_id": 29248,
+      "source": 927450,
+      "match_type": "fuzzy",
+      "similarity": 0.956,
+      "evidence_preview": "في يناير 2016، صرح تشين أن بلاك بيري لا تخطط لتطوير أي أجهزة جديدة تعمل بنظام بل"
+    },
+    {
+      "final_id": 76986,
+      "source": 1093475,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "يوجد بالمدرسة مراكز تميز مقسمة إلى معهد ليدز لعلم الوراثة والصحة والعلاج، ومعهد "
+    },
+    {
+      "final_id": 114018,
+      "source": 2128,
+      "match_type": "fuzzy",
+      "similarity": 0.921,
+      "evidence_preview": "إحدى أهم مُميزات سطح عطارد هي الكميات الهائلة للحواف الضيقة على سطحه والتي تمتد "
+    },
+    {
+      "final_id": 41506,
+      "source": 7956,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في عشرينيات القرن التاسع عشر، مع تمرد جميع المستعمرات الإسبانية في أمريكا اللاتي"
+    },
+    {
+      "final_id": 118987,
+      "source": 7348046,
+      "match_type": "fuzzy",
+      "similarity": 0.987,
+      "evidence_preview": "ثبتت أول حالة كوفيد19 في ولاية نيويورك الأمريكية خلال الوباء في 1 مارس 2020."
+    },
+    {
+      "final_id": 851,
+      "source": 46404,
+      "match_type": "fuzzy",
+      "similarity": 0.954,
+      "evidence_preview": "لا يُوجد أي دليل صريح حتى الآن على حدوث ارتفاع شديد في الحرارة أو تغير ذو قيمة ف"
+    },
+    {
+      "final_id": 69092,
+      "source": 1098806,
+      "match_type": "fuzzy",
+      "similarity": 0.907,
+      "evidence_preview": "دانيال برايان براين دانيلسون (بالإنجليزيَّة: Bryan Danielson) (ولد في 22 مايو، 1"
+    },
+    {
+      "final_id": 131272,
+      "source": 18208,
+      "match_type": "fuzzy",
+      "similarity": 0.841,
+      "evidence_preview": "تشارلز الثاني ملك إنجلترا تشارلز الثاني (Charles II) (ولد في 9 مايو/أيار 1630، و"
+    },
+    {
+      "final_id": 46878,
+      "source": 9335278,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "صدر مرسومان في عام 2011، وقع عليهما رئيس الجمهورية آنذاك ميشال سليمان، لحرمان ال"
+    },
+    {
+      "final_id": 133133,
+      "source": 348976,
+      "match_type": "fuzzy",
+      "similarity": 0.882,
+      "evidence_preview": "وفي النصف الثاني من القرن التاسع عشر أقامت الحكومة العثمانية بالعراق حاميات عسكر"
+    },
+    {
+      "final_id": 27900,
+      "source": 4203,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "اليوم، يلتحق بالمدارس الابتدائية أكثر من 90% من جميع الأطفال في سن الدراسة الابت"
+    },
+    {
+      "final_id": 163973,
+      "source": 2635237,
+      "match_type": "fuzzy",
+      "similarity": 0.984,
+      "evidence_preview": "اصطدام كهذا قد يسبب تأثير يرتبط بوشاح الأرض يسمى «تريّش الوشاح البركاني» عند الن"
+    },
+    {
+      "final_id": 78282,
+      "source": 9680607,
+      "match_type": "fuzzy",
+      "similarity": 0.915,
+      "evidence_preview": "أظهرت الأبحاث أن الأطفال الذين يظهرون كفاءة في الإدراك الصوتي للغة غير لغتهم الأ"
+    },
+    {
+      "final_id": 167553,
+      "source": 38187,
+      "match_type": "fuzzy",
+      "similarity": 0.949,
+      "evidence_preview": "أما الأفكار المركبة فليست حاضرة في الشئ المحسوس نفسه بل يستخلصها العقل منه مثل ا"
+    },
+    {
+      "final_id": 133128,
+      "source": 7437865,
+      "match_type": "fuzzy",
+      "similarity": 0.977,
+      "evidence_preview": "في مايو 2014، اتهمت المندوبة الأمريكية سامانثا باور فولك بالانحياز المستمر ضد إس"
+    },
+    {
+      "final_id": 159691,
+      "source": 9010475,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في عام 1882، بعد تولي شقيقه الإسكندر العرش، تم تعيين أليكسي رئيسًا للإدارة البحر"
+    },
+    {
+      "final_id": 52189,
+      "source": 7457226,
+      "match_type": "fuzzy",
+      "similarity": 0.956,
+      "evidence_preview": "في مارس 2020، أفادت صحيفة «ميامي نيو تايمز» أن مدراء خط الرحلات البحرية النرويجي"
+    },
+    {
+      "final_id": 40111,
+      "source": 394645,
+      "match_type": "fuzzy",
+      "similarity": 0.879,
+      "evidence_preview": "أطلق جيمس روبنسون سنة 1959م في مقالته 'البحث الجديد عن يسوع التاريخي' اسم البحث "
+    },
+    {
+      "final_id": 98066,
+      "source": 9453743,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كما فازت بالميدالية الفضية في بطولة العالم للكيرلنج للناشئين 2010."
+    },
+    {
+      "final_id": 42395,
+      "source": 7502900,
+      "match_type": "fuzzy",
+      "similarity": 0.885,
+      "evidence_preview": "وفي يوم 9 أبريل عام 2020، أعلنت هيئة النقل البري عن لصق ملصقات في الحافلات ومحطا"
+    },
+    {
+      "final_id": 141443,
+      "source": 341604,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كثير من البرامج المتوازية تتطلب تزامنا بين مهامها الفرعية، وهذا يتطلب استخدام حا"
+    },
+    {
+      "final_id": 139078,
+      "source": 616298,
+      "match_type": "fuzzy",
+      "similarity": 0.893,
+      "evidence_preview": "(الشطف المتدرج gradient elution فهو التغير المستمر لتركيب الطور المتحرك كنسبة نو"
+    },
+    {
+      "final_id": 150,
+      "source": 1092713,
+      "match_type": "fuzzy",
+      "similarity": 0.959,
+      "evidence_preview": "في الوقت الحالي، وتجاوز معدل الميكنة الشاملة لزراعة المحاصيل والحصاد 68%."
+    },
+    {
+      "final_id": 157062,
+      "source": 78633,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وفي الانتخابات التشريعية التعددية الأولى التي أقيمت في ديسمبر 1991 لتعيين نواب ا"
+    },
+    {
+      "final_id": 85022,
+      "source": 7164833,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "كان «اختبار التنبؤ بحدوث زلزال باركفيلد» من أقصى تنبؤات الزلازل المبشرة أبدًا."
+    },
+    {
+      "final_id": 128132,
+      "source": 3653616,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في يوليو عام 2012، قالت إدارة الصحة العامة بولاية فيرمونت إن 10 أشخاص في الولاية"
+    },
+    {
+      "final_id": 5106,
+      "source": 3193949,
+      "match_type": "fuzzy",
+      "similarity": 0.939,
+      "evidence_preview": "النقطة الجديرة بالملاحظة في هذا الصراع هي أن إيران تتمتع بعلاقات إيجابية للغاية "
+    },
+    {
+      "final_id": 29331,
+      "source": 9599363,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في 29 أبريل، أقام طلابٌ مخيمًا خارج المكتبة في جامعة فرجينيا كومونولث."
+    },
+    {
+      "final_id": 95200,
+      "source": 993117,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "عزف فيل كولين الإيتار بدون ذكره في أغنية سام كينيسون، «وايلد ثينغ»، في 1988."
+    },
+    {
+      "final_id": 80659,
+      "source": 46418,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ويدين 100 بالمئة من السكان الإسلام، وفق المذهب الشافعي."
+    },
+    {
+      "final_id": 62816,
+      "source": 143832,
+      "match_type": "fuzzy",
+      "similarity": 0.917,
+      "evidence_preview": "وسينضم إيفرون في الفيلم الكوميدي \\\"Baywatch\\\"، الذي يعد إعادة إنتاج لمسلسل تليفز"
+    },
+    {
+      "final_id": 15185,
+      "source": 2658917,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "ونقلت الشاحنات الجرحى من جبهه إلى أخرى."
+    },
+    {
+      "final_id": 63189,
+      "source": 27494,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في 14 نوفمبر 1997، أدى البي جيز في حفل على الهواء مباشرة في لاس فيجاس يعرف باسم "
+    },
+    {
+      "final_id": 148780,
+      "source": 139827,
+      "match_type": "fuzzy",
+      "similarity": 0.984,
+      "evidence_preview": "في سنة 1715 وقع فيليب الخامس على مراسيم نويفا بلانتا التي ألغت معظم الحقوق والام"
+    },
+    {
+      "final_id": 20651,
+      "source": 18884,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "الغشاء البلازمي أحد التراكيب المسؤولة أساسًا عن الاتزان الداخلي؛ فهو حاجز فاصل ر"
+    },
+    {
+      "final_id": 22459,
+      "source": 9438457,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "من وجهة نظر استراتيجيات الكفاف، تظل مجتمعات جنوب وشمال بلاد الشام مجموعات تعتمد "
+    },
+    {
+      "final_id": 127446,
+      "source": 7970919,
+      "match_type": "fuzzy",
+      "similarity": 0.864,
+      "evidence_preview": "تم اكتشاف مقبرة E094 على بعد حوالي 600 متر من المقابر الموصوفة سابقًا في عام 200"
+    },
+    {
+      "final_id": 18149,
+      "source": 173716,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "شهدت شمال إفريقيا صعود أنظمة سياسية أسسها البربر مثل الدولة المرينية في المغرب، "
+    },
+    {
+      "final_id": 139694,
+      "source": 65888,
+      "match_type": "none",
+      "similarity": 0.486,
+      "evidence_preview": "حقق مع منتخب بلاده كأس الأمم الآسيوية للمرة الأولى عام 1984 في سنغافورة وكان هو "
+    },
+    {
+      "final_id": 32974,
+      "source": 409180,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "في منتصف القرن 22 قبل الميلاد، أدى التغير المناخي المفاجئ والقصير الذي تسبب في ا"
+    },
+    {
+      "final_id": 33664,
+      "source": 142566,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "شهود يهوه إحدى الطوائف المسيحية الغربية كانت بداياتهم في أوائل سبعينيات القرن ال"
+    },
+    {
+      "final_id": 173020,
+      "source": 62,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "إستونيا كان عضوا في عصبة الأمم من 22 سبتمبر 1921, وكان عضوا في الأمم المتحدة منذ"
+    },
+    {
+      "final_id": 124639,
+      "source": 4260761,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "المصطلح يُستخدم للإشارة إلى جميع المتواجدين في مناطق صناعة الجنس، متضمنًا جميع ا"
+    },
+    {
+      "final_id": 144178,
+      "source": 5583,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "باريس هي وجهة سياحية رائدة في العالم وتمتلك مجموعة متنوعة من المتاحف والمسارح وا"
+    },
+    {
+      "final_id": 43333,
+      "source": 46888,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "وقبل عام 1990، أي عندما استضافت إيطاليا نهائيات كأس العالم لعام 1990، تمّ تجديد "
+    },
+    {
+      "final_id": 69530,
+      "source": 22575,
+      "match_type": "exact",
+      "similarity": 1.0,
+      "evidence_preview": "تتفرع الشجرة القصبية لدى الإنسان 23 مرة، بينما تتكون الشجرة القصبية لدى الفئران "
+    },
+    {
+      "final_id": 138374,
+      "source": 15828,
+      "match_type": "fuzzy",
+      "similarity": 0.983,
+      "evidence_preview": "اللهجة السريانية الغربية هي حالياً اللغة الطقسية الرسمية للكنائس السريانية الغرب"
+    }
+  ]
+}
