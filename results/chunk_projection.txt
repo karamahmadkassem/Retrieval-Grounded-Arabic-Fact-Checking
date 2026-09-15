@@ -1,0 +1,27 @@
+Distractor corpus chunk projection (5K smoke test, --max-window 1)
+================================================================
+Date: 2026-09-14
+Articles sampled: 5000
+Chunks written: 223,206
+Avg chunks/article: 44.6
+
+Projected full distractor (1.2M articles): ~53.6M chunks
+Projected total with gold corpus (+2.73M): ~56.3M index documents
+
+BM25 smoke test results (500-claim sample, seed=42)
+---------------------------------------------------
+Gold-only index (2.73M docs):
+  Recall@1=0.436  Recall@5=0.814  Recall@10=0.904  MRR=0.5825
+
+Gold + 5K distractor index (2.96M docs):
+  Recall@1=0.442  Recall@5=0.814  Recall@10=0.906  MRR=0.5879
+
+Full pipeline (completed 2026-09-14):
+  Distractor articles: 1,322,604
+  Distractor chunks: 12,403,992
+  Total index docs: 15,138,203 (incl. 2,734,211 gold)
+  Avg chunks/article (full): 9.4 (lower than 5K smoke sample due to stubs/short articles)
+
+Full BM25 baseline (176,026 claims, claim-as-query):
+  Recall@1=0.5272  Recall@5=0.8472  Recall@10=0.9146  MRR=0.6565
+  Output: data/arafa/bm25_eval_results.json

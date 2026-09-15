@@ -81,6 +81,22 @@ credentials.json
 # Results / outputs (regenerate from code)
 results/*
 !results/.gitkeep
+!results/bm25_baseline_findings.md
+!results/chunk_projection.txt
+!results/missing_chunks_sources.txt
+
+# Large retrieval artifacts (regenerate from scripts; not versioned)
+data/arafa/bm25_index/
+data/arafa/bm25_index_*/
+data/arafa/bm25_eval_results.json
+data/arafa/bm25_eval_*.json
+data/arafa/pyserini_collection/
+data/arafa/wiki_corpus_chunks.jsonl
+data/arafa/wikipedia_chunks.json
+data/arafa/gold_passages.json
+data/arafa/distractor_chunks.jsonl
+data/arwiki/
+data/tools/
 
 # Source verification (regenerate via scripts/verify_arafa_sources.py)
 data/arafa/verification/claims_verification.json

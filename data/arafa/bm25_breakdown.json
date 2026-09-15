@@ -1,0 +1,120 @@
+{
+  "overall": {
+    "n": 176026,
+    "recall@1": 0.5272,
+    "recall@5": 0.8472,
+    "recall@10": 0.9146,
+    "mrr": 0.6565
+  },
+  "by_judgement": {
+    "nei": {
+      "n": 27509,
+      "recall@1": 0.423,
+      "recall@5": 0.7669,
+      "recall@10": 0.8544,
+      "mrr": 0.5597
+    },
+    "supported": {
+      "n": 107675,
+      "recall@1": 0.5594,
+      "recall@5": 0.8719,
+      "recall@10": 0.9333,
+      "mrr": 0.6858
+    },
+    "refuted": {
+      "n": 40842,
+      "recall@1": 0.5126,
+      "recall@5": 0.8359,
+      "recall@10": 0.9058,
+      "mrr": 0.6442
+    }
+  },
+  "by_mutation_type": {
+    "Scope Refinement": {
+      "n": 6235,
+      "recall@1": 0.5015,
+      "recall@5": 0.8266,
+      "recall@10": 0.9036,
+      "mrr": 0.6345
+    },
+    "Temporal Nuance": {
+      "n": 13533,
+      "recall@1": 0.544,
+      "recall@5": 0.8596,
+      "recall@10": 0.924,
+      "mrr": 0.6731
+    },
+    "Qualitative Shift": {
+      "n": 8170,
+      "recall@1": 0.4876,
+      "recall@5": 0.8191,
+      "recall@10": 0.8898,
+      "mrr": 0.6216
+    },
+    "Quantitative Precision": {
+      "n": 7467,
+      "recall@1": 0.469,
+      "recall@5": 0.8026,
+      "recall@10": 0.8797,
+      "mrr": 0.6046
+    },
+    "Relationship Reconfiguration": {
+      "n": 2409,
+      "recall@1": 0.5255,
+      "recall@5": 0.8501,
+      "recall@10": 0.9207,
+      "mrr": 0.6579
+    },
+    "Contextual Reframing": {
+      "n": 2931,
+      "recall@1": 0.5619,
+      "recall@5": 0.8646,
+      "recall@10": 0.9243,
+      "mrr": 0.6847
+    },
+    "Causation vs. Correlation Logic": {
+      "n": 88,
+      "recall@1": 0.5,
+      "recall@5": 0.9318,
+      "recall@10": 0.9545,
+      "mrr": 0.6669
+    },
+    "Range Logic": {
+      "n": 4,
+      "recall@1": 0.25,
+      "recall@5": 0.75,
+      "recall@10": 1.0,
+      "mrr": 0.4792
+    },
+    "Conditional Logic": {
+      "n": 4,
+      "recall@1": 0.25,
+      "recall@5": 0.25,
+      "recall@10": 0.5,
+      "mrr": 0.2917
+    },
+    "Duration Logic": {
+      "n": 1,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "by_gold_match_type": {
+    "fuzzy": {
+      "n": 70628,
+      "recall@1": 0.4323,
+      "recall@5": 0.7997,
+      "recall@10": 0.895,
+      "mrr": 0.5794
+    },
+    "exact": {
+      "n": 105398,
+      "recall@1": 0.5908,
+      "recall@5": 0.879,
+      "recall@10": 0.9278,
+      "mrr": 0.7081
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "metric": "claim-side token overlap: |claim_tokens ∩ evidence_tokens| / |claim_tokens|",
+  "normalization": "arabic_text_utils.normalize (strip tashkeel, collapse whitespace)",
+  "by_overlap_bin": [
+    {
+      "bin": "0%-10%",
+      "n": 1464,
+      "recall_at_1": 0.1216
+    },
+    {
+      "bin": "10%-20%",
+      "n": 3828,
+      "recall_at_1": 0.2035
+    },
+    {
+      "bin": "20%-30%",
+      "n": 11040,
+      "recall_at_1": 0.2726
+    },
+    {
+      "bin": "30%-40%",
+      "n": 20677,
+      "recall_at_1": 0.3751
+    },
+    {
+      "bin": "40%-50%",
+      "n": 28701,
+      "recall_at_1": 0.4646
+    },
+    {
+      "bin": "50%-60%",
+      "n": 42518,
+      "recall_at_1": 0.5483
+    },
+    {
+      "bin": "60%-70%",
+      "n": 35788,
+      "recall_at_1": 0.6242
+    },
+    {
+      "bin": "70%-80%",
+      "n": 20654,
+      "recall_at_1": 0.676
+    },
+    {
+      "bin": "80%-90%",
+      "n": 9132,
+      "recall_at_1": 0.7129
+    },
+    {
+      "bin": "90%-100%",
+      "n": 2224,
+      "recall_at_1": 0.7293
+    }
+  ],
+  "by_quintile": [
+    {
+      "quintile": "Q1",
+      "overlap_min": 0.0,
+      "overlap_max": 0.385,
+      "n": 35205,
+      "recall_at_1": 0.3111
+    },
+    {
+      "quintile": "Q2",
+      "overlap_min": 0.385,
+      "overlap_max": 0.5,
+      "n": 35205,
+      "recall_at_1": 0.4687
+    },
+    {
+      "quintile": "Q3",
+      "overlap_min": 0.5,
+      "overlap_max": 0.583,
+      "n": 35205,
+      "recall_at_1": 0.5479
+    },
+    {
+      "quintile": "Q4",
+      "overlap_min": 0.583,
+      "overlap_max": 0.688,
+      "n": 35205,
+      "recall_at_1": 0.6229
+    },
+    {
+      "quintile": "Q5",
+      "overlap_min": 0.688,
+      "overlap_max": 1.0,
+      "n": 35206,
+      "recall_at_1": 0.6855
+    }
+  ],
+  "thresholds": {
+    "<30%": {
+      "n": 16332,
+      "recall_at_1": 0.2428
+    },
+    ">=50%": {
+      "n": 110316,
+      "recall_at_1": 0.6141
+    }
+  },
+  "subgroup_mean_overlap": {
+    "by_judgement": {
+      "supported": {
+        "n": 107675,
+        "mean_overlap": 0.559
+      },
+      "refuted": {
+        "n": 40842,
+        "mean_overlap": 0.522
+      },
+      "nei": {
+        "n": 27509,
+        "mean_overlap": 0.458
+      }
+    },
+    "by_gold_match_type": {
+      "exact": {
+        "n": 105398,
+        "mean_overlap": 0.533
+      },
+      "fuzzy": {
+        "n": 70628,
+        "mean_overlap": 0.537
+      }
+    }
+  }
+}
