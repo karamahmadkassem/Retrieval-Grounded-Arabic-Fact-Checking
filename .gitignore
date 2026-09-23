@@ -84,6 +84,9 @@ results/*
 !results/bm25_baseline_findings.md
 !results/chunk_projection.txt
 !results/missing_chunks_sources.txt
+!results/evidence_localization_task.md
+!results/inarticle_bm25_findings.md
+!results/evidence_localization_results.md
 
 # Large retrieval artifacts (regenerate from scripts; not versioned)
 data/arafa/bm25_index/
@@ -97,6 +100,9 @@ data/arafa/gold_passages.json
 data/arafa/distractor_chunks.jsonl
 data/arwiki/
 data/tools/
+models/
+data/arafa/localization/*.json
+!data/arafa/localization/split_manifest.json
 
 # Source verification (regenerate via scripts/verify_arafa_sources.py)
 data/arafa/verification/claims_verification.json
