@@ -7,12 +7,13 @@
 #SBATCH --gres=gpu:v100d32q:1
 #SBATCH --mem=32000
 #SBATCH --time=0-12:00:00
-#SBATCH --account=YOUR_ACCOUNT
+#SBATCH --account=kma88
 #SBATCH --output=logs/reranker-%j.out
 #SBATCH --error=logs/reranker-%j.err
 #
 # Requires data/arafa/localization/biencoder_test.json from the bi-encoder job.
-# Edit --account and --gres to match Bassel's onboarding notes.
+# SSH: kma88@octopus.aub.edu.lb
+# If sbatch rejects --account=kma88, replace with the project name Bassel gives you.
 #   sbatch scripts/slurm/train_reranker.sh
 #
 # OOM on bge-reranker-v2-m3: use

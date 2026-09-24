@@ -7,11 +7,12 @@
 #SBATCH --gres=gpu:v100d32q:1
 #SBATCH --mem=32000
 #SBATCH --time=0-12:00:00
-#SBATCH --account=YOUR_ACCOUNT
+#SBATCH --account=kma88
 #SBATCH --output=logs/biencoder-%j.out
 #SBATCH --error=logs/biencoder-%j.err
 #
-# Edit --account and --gres to match Bassel's onboarding notes.
+# SSH: kma88@octopus.aub.edu.lb  (email is kma88@mail.aub.edu).
+# If sbatch rejects --account=kma88, replace with the project name Bassel gives you.
 # Submit from the repo root:
 #   mkdir -p logs
 #   sbatch scripts/slurm/train_biencoder.sh
