@@ -102,6 +102,8 @@ data/arafa/distractor_chunks.jsonl
 data/arwiki/
 data/tools/
 models/
+logs/*
+!logs/.gitkeep
 data/arafa/localization/*.json
 !data/arafa/localization/split_manifest.json
 

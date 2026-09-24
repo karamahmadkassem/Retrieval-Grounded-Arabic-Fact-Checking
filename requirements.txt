@@ -4,3 +4,6 @@ tqdm>=4.66.0
 rapidfuzz>=3.0.0
 wikiextractor>=3.0.0
 pyserini>=0.22.0
+
+# GPU / Octopus training extras: pip install -r requirements-ml.txt
+# Do not install this file's Pyserini/JDK stack on the cluster.

@@ -1,3 +1,6 @@
 # Track the ARAFA dataset with Git LFS (required for GitHub — file is ~180 MB).
 # After cloning: git lfs install && git lfs pull
 data/arafa/ARAFA.json filter=lfs diff=lfs merge=lfs -text
+
+# Keep SLURM scripts Unix-wrapped so bash on Octopus does not see CR.
+*.sh text eol=lf

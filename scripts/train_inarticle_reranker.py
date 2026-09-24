@@ -101,25 +101,6 @@ def train_ce(args, examples):
     return model
 
 
-def evaluate_rerank(ce, bm25_results, dense_results, chunks_by_source, top_k_stage1=50):
-    dense_by_id = {r["final_id"]: r for r in dense_results}
-    text_of_article = {}
-    results = []
-    for br in tqdm(bm25_results, desc="rerank"):
-        fid = br["final_id"]
-        chs = chunks_by_source.get(str(br["source"]), [])
-        text_of = {c["chunk_id"]: c["text"] for c in chs}
-        bm25_ids = []
-        # reconstruct BM25 order from stored rank only if we re-run BM25
-        bm25_ids = bm25_top(
-            {"claim": next((c["text"] for c in chs if False), "")},
-            chs, top_k_stage1,
-        )
-        # claim is not on br — caller should attach claim or we reload jsonl
-        results.append(br)
-    return results
-
-
 def evaluate(ce, rows, chunks_by_source, dense_by_id, top_k=50, batch_size=16):
     results = []
     for r in tqdm(rows, desc="hybrid+rerank"):
