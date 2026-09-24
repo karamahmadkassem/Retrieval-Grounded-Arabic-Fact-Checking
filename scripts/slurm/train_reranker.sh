@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:v100d32q:1
 #SBATCH --mem=32000
-#SBATCH --time=0-12:00:00
+#SBATCH --time=0-06:00:00
 #SBATCH --account=kma88
 #SBATCH --output=logs/reranker-%j.out
 #SBATCH --error=logs/reranker-%j.err
