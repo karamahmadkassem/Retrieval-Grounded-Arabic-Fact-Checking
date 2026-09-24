@@ -29,7 +29,8 @@ mkdir -p logs models/inarticle_biencoder
 
 module purge
 module load cuda
-module load python/pytorch
+# python/pytorch is Python 3.6 and cannot run this repo. Use ai-4 (3.10 + torch 2.1).
+module load python/ai-4
 export PYTHONUNBUFFERED=1
 
 nvidia-smi

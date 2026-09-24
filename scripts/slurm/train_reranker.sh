@@ -29,7 +29,7 @@ mkdir -p logs models/inarticle_reranker
 
 module purge
 module load cuda
-module load python/pytorch
+module load python/ai-4
 export PYTHONUNBUFFERED=1
 
 nvidia-smi
