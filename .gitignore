@@ -97,6 +97,7 @@ data/arafa/pyserini_collection/
 data/arafa/wiki_corpus_chunks.jsonl
 data/arafa/wikipedia_chunks.json
 data/arafa/gold_passages.json
+data/arafa/evidence_match_full_article_cache.json
 data/arafa/distractor_chunks.jsonl
 data/arwiki/
 data/tools/
