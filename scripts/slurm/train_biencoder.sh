@@ -37,16 +37,16 @@ echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-unset}"
 nvidia-smi
 python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; print(torch.cuda.get_device_name(0), 'ngpu', torch.cuda.device_count())"
 
-# Default: GPU smoke. Comment this block and uncomment full train after it works.
-python scripts/train_inarticle_biencoder.py \
-  --model intfloat/multilingual-e5-small \
-  --epochs 1 --max-train-claims 4000 --batch-size 16 --max-eval-claims 500 \
-  --n-negatives 7 --eval-split test
-
-# Full train (only after smoke succeeds):
+# Smoke (already succeeded as job 916998):
 # python scripts/train_inarticle_biencoder.py \
-#   --model intfloat/multilingual-e5-large \
-#   --epochs 1 \
-#   --batch-size 16 \
-#   --n-negatives 7 \
-#   --eval-split test
+#   --model intfloat/multilingual-e5-small \
+#   --epochs 1 --max-train-claims 4000 --batch-size 16 --max-eval-claims 500 \
+#   --n-negatives 7 --eval-split test
+
+# Full train: all train claims, full test split.
+python scripts/train_inarticle_biencoder.py \
+  --model intfloat/multilingual-e5-large \
+  --epochs 1 \
+  --batch-size 16 \
+  --n-negatives 7 \
+  --eval-split test
