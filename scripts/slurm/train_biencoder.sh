@@ -32,20 +32,21 @@ module load cuda
 # python/pytorch is Python 3.6 and cannot run this repo. Use ai-4 (3.10 + torch 2.1).
 module load python/ai-4
 export PYTHONUNBUFFERED=1
+echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-unset}"
 
 nvidia-smi
-python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; print(torch.cuda.get_device_name(0))"
+python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; print(torch.cuda.get_device_name(0), 'ngpu', torch.cuda.device_count())"
 
-# GPU smoke (uncomment first; minutes–tens of minutes):
-# python scripts/train_inarticle_biencoder.py \
-#   --model intfloat/multilingual-e5-small \
-#   --epochs 1 --max-train-claims 4000 --batch-size 16 --max-eval-claims 500 \
-#   --n-negatives 7 --eval-split test
-
-# Full train. OOM? switch model to intfloat/multilingual-e5-small and/or batch-size 8.
+# Default: GPU smoke. Comment this block and uncomment full train after it works.
 python scripts/train_inarticle_biencoder.py \
-  --model intfloat/multilingual-e5-large \
-  --epochs 1 \
-  --batch-size 16 \
-  --n-negatives 7 \
-  --eval-split test
+  --model intfloat/multilingual-e5-small \
+  --epochs 1 --max-train-claims 4000 --batch-size 16 --max-eval-claims 500 \
+  --n-negatives 7 --eval-split test
+
+# Full train (only after smoke succeeds):
+# python scripts/train_inarticle_biencoder.py \
+#   --model intfloat/multilingual-e5-large \
+#   --epochs 1 \
+#   --batch-size 16 \
+#   --n-negatives 7 \
+#   --eval-split test

@@ -66,11 +66,14 @@ def build_ce_examples(rows, chunks_by_source, n_neg, max_claims, seed):
 
 
 def train_ce(args, examples):
-    from datasets import Dataset
+    from datasets import Dataset, DatasetInfo
     from sentence_transformers.cross_encoder import CrossEncoder
     from sentence_transformers.cross_encoder.losses import BinaryCrossEntropyLoss
     from sentence_transformers.cross_encoder.trainer import CrossEncoderTrainer
     from sentence_transformers.cross_encoder.training_args import CrossEncoderTrainingArguments
+
+    if not hasattr(DatasetInfo, "dataset_name"):
+        DatasetInfo.dataset_name = "arafa-inarticle"
 
     model = CrossEncoder(args.model, num_labels=1, max_length=512)
     ds = Dataset.from_dict({

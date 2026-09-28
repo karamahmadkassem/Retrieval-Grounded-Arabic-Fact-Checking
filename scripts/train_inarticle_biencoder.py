@@ -85,10 +85,14 @@ def build_train_examples(rows, chunks_by_source, model_name, n_neg, max_claims, 
 
 
 def train_model(args, examples):
-    from datasets import Dataset
+    from datasets import Dataset, DatasetInfo
     from sentence_transformers import SentenceTransformer, SentenceTransformerTrainer
     from sentence_transformers import SentenceTransformerTrainingArguments
     from sentence_transformers.losses import MultipleNegativesRankingLoss
+
+    # Older `datasets` lacks DatasetInfo.dataset_name; ST 3.3 trainer crashes without it.
+    if not hasattr(DatasetInfo, "dataset_name"):
+        DatasetInfo.dataset_name = "arafa-inarticle"
 
     model = SentenceTransformer(args.model)
     payload = {
