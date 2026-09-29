@@ -95,6 +95,8 @@ def train_model(args, examples):
         DatasetInfo.dataset_name = "arafa-inarticle"
 
     model = SentenceTransformer(args.model)
+    if torch.cuda.is_available():
+        model.max_seq_length = min(getattr(model, "max_seq_length", 512) or 512, 384)
     payload = {
         "anchor": [ex["query"] for ex in examples],
         "positive": [ex["positive"] for ex in examples],
@@ -107,6 +109,7 @@ def train_model(args, examples):
         output_dir=str(args.output_dir),
         num_train_epochs=args.epochs,
         per_device_train_batch_size=args.batch_size,
+        gradient_accumulation_steps=4 if args.batch_size <= 8 else 1,
         warmup_steps=50,
         logging_strategy="no",
         save_strategy="no",
