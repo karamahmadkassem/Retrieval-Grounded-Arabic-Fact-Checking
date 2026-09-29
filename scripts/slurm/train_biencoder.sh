@@ -32,28 +32,33 @@ module load cuda
 # python/pytorch is Python 3.6 and cannot run this repo. Use ai-4 (3.10 + torch 2.1).
 module load python/ai-4
 export PYTHONUNBUFFERED=1
-# Octopus often leaves CUDA_VISIBLE_DEVICES unset on a 2-GPU node; ST then uses
-# DataParallel and OOMs (job 917001). Pin a single GPU.
+# Octopus leaves CUDA_VISIBLE_DEVICES unset on a 2-GPU node. sentence-transformers
+# then uses DataParallel and OOMs (job 917001, e5-large, 31.7 GiB full).
 if [ -z "${CUDA_VISIBLE_DEVICES:-}" ]; then
   export CUDA_VISIBLE_DEVICES=0
 fi
 export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
 echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-unset}"
 
+free_kb=$(df -Pk "$HOME" | awk 'NR==2 {print $4}')
+echo "home_free_kb=${free_kb}"
+if [ "${free_kb}" -lt 3000000 ]; then
+  echo "Need at least 3GB free in \$HOME before training." >&2
+  df -h "$HOME"
+  exit 1
+fi
+
 nvidia-smi
-python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; print(torch.cuda.get_device_name(0), 'ngpu', torch.cuda.device_count())"
+python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; n=torch.cuda.device_count(); print(torch.cuda.get_device_name(0), 'ngpu', n); assert n==1, 'expected 1 GPU, got %s' % n"
 
-# Smoke (already succeeded as job 916998):
-# python scripts/train_inarticle_biencoder.py \
-#   --model intfloat/multilingual-e5-small \
-#   --epochs 1 --max-train-claims 4000 --batch-size 16 --max-eval-claims 500 \
-#   --n-negatives 7 --eval-split test
-
-# Full train. Job 917001 OOMed at e5-large batch 16; use one GPU and batch 4.
-# If this OOMs again, switch --model to intfloat/multilingual-e5-small.
+# Smoke already succeeded (job 916998, 500 claims): R@1=0.776, MRR=0.842.
+# Do not submit e5-large here: job 917001 OOMed, and full large training
+# cannot finish inside the 6-hour gpu partition limit after ~2h of BM25 mining.
+#
+# This job: e5-small, all 118,664 train claims, full test, one V100, batch 32.
 python scripts/train_inarticle_biencoder.py \
-  --model intfloat/multilingual-e5-large \
+  --model intfloat/multilingual-e5-small \
   --epochs 1 \
-  --batch-size 4 \
+  --batch-size 32 \
   --n-negatives 7 \
   --eval-split test
