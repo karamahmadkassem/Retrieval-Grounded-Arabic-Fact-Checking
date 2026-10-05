@@ -1,13 +1,7 @@
-# In-article localization training (Octopus / GPU).
-# Install on top of the cluster CUDA PyTorch module, not instead of it:
-#   module load cuda
-#   module load python/pytorch
-#   pip install --user -r requirements-ml.txt
-#
-# Do not pin a CPU torch wheel here. Use the CUDA build Research Computing
-# recommends for the node (python/pytorch module, or a matching conda env).
+# GPU extras on top of the cluster CUDA PyTorch (do not pip-install torch).
+# Next: extractive BERT. Old e5 ranking scripts live in archive/scripts/.
 
-sentence-transformers>=3.0
+transformers>=4.44
 datasets>=2.14
 tqdm>=4.66
-accelerate>=1.1.0
+accelerate>=0.33.0

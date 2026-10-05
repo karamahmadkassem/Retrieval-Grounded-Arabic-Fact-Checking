@@ -1,0 +1,11 @@
+=== final_id=16654 source=8583421 pilot_sim=0.736 ===
+Evidence (1 sents, 22 words):
+في عام 2019، استجاب أعضاء مشروع جامعة رين للدعوة لتقديم مشاريع من كليات الأبحاث الجامعية () لبرنامج الاستثمار من أجل المستقبل ().
+In article (exact substring): False
+Best sliding-window sim on full article: 0.736
+
+=== final_id=139694 source=65888 pilot_sim=0.486 ===
+Evidence (1 sents, 30 words):
+حقق مع منتخب بلاده كأس الأمم الآسيوية للمرة الأولى عام 1984 في سنغافورة وكان هو هداف التصفيات والنهائيات بمجموع 11 هدف أبرزها هدفه الشهير في نهائي البطولة في المنتخب الصيني.
+In article (exact substring): False
+Best sliding-window sim on full article: 0.532

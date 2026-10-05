@@ -4,31 +4,25 @@ Research repository for **Karam Kassem's** thesis on Arabic fact checking, cente
 
 ## Overview
 
-This project investigates automated fact verification for Arabic text. The core resource is the ARAFA dataset: ~182K claim–evidence pairs with verdicts (`supported`, `refuted`, `nei`) and reasoning annotations. Supporting materials include the thesis proposal, supplementary documentation, reference papers, and presentation slides.
+This project investigates automated fact verification for Arabic text using **ARAFA** (~182K claim–evidence pairs). The current experiment is **in-article evidence localization**: given a claim and a known Wikipedia page, find the gold evidence span.
+
+- **Lexical baseline:** BM25 on overlapping 1–3 sentence windows (`scripts/run_inarticle_bm25_eval.py`).
+- **Next neural method:** extractive BERT (one span), not dense ranking.
+- **Archived:** open-domain Wikipedia BM25 and e5 bi-encoder / reranker (`archive/`).
 
 ## Repository Structure
 
 ```
 .
-├── data/
-│   └── arafa/                  # ARAFA dataset
-│       ├── ARAFA.json          # ~180 MB — see Git LFS note below
-│       ├── ARAFA.metadata.json # Dataset metrics (judgements, types, etc.)
-│       └── README.md           # Dataset schema and statistics
-├── scripts/                    # Dataset utilities (format, validate, metadata)
-├── docs/
-│   ├── thesis/                 # Thesis proposal and supplementary material
-│   ├── papers/                 # Reference papers
-│   └── presentations/          # Roadmaps and framework slides
-├── notes/
-│   └── meetings/               # Advisor / team meeting notes
-├── src/                        # Source code (experiments, pipelines, utilities)
-├── notebooks/                  # Jupyter notebooks for exploration and analysis
-├── results/                    # Experiment outputs (gitignored by default)
-├── requirements.txt            # Python dependencies
-├── README.md
-├── .gitignore
-└── .gitattributes              # Git LFS configuration for large dataset
+├── data/arafa/          # ARAFA, verification, chunks, gold, localization splits
+├── scripts/             # Active data + BM25 localization code
+├── results/             # Task spec + in-article BM25 findings
+├── archive/             # Old tracks (see archive/README.md)
+│   └── artifacts/       # Large local indexes/dumps (gitignored)
+├── docs/                # Thesis, papers, slides
+├── notes/meetings/
+├── requirements.txt
+└── requirements-ml.txt  # GPU (BERT / transformers)
 ```
 
 ## Getting Started
@@ -89,10 +83,9 @@ Keep the file local only (current `.gitignore` setting) and distribute via cloud
 
 ## Development Conventions
 
-- Place reusable Python modules in `src/`
-- Use `notebooks/` for exploratory analysis; keep production scripts in `src/`
-- Write experiment outputs to `results/` (excluded from git by default)
-- Add meeting notes under `notes/meetings/` with descriptive filenames (e.g. `meeting-03-topic.txt`)
+- Active Python lives in `scripts/`; retired code goes to `archive/scripts/`
+- Write experiment outputs to `results/`
+- Add meeting notes under `notes/meetings/`
 
 ## Related Work
 

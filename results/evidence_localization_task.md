@@ -1,7 +1,7 @@
 # Evidence localization task (in-article)
 
-**Status:** Implementation track (replaces open-domain BM25 as the primary retrieval experiment)  
-**Contrast with:** git tag `bm25-baseline-v1` (claim → 15.1M Wikipedia chunks)
+**Status:** BM25 1–3 sentence baseline is frozen. Primary neural method is **extractive BERT** (one span), not chunk ranking.  
+**Archived:** open-domain Wikipedia BM25 (`archive/`) and e5 bi-encoder / cross-encoder ranking.
 
 ---
 
@@ -58,16 +58,16 @@ Chunk lists stay in `wikipedia_chunks.json` (load by `source`); they are not dup
 
 ---
 
-## Pipeline (accuracy)
+## Pipeline
 
-1. **In-article BM25** (Phase 2) — lexical baseline and hard-negative source.
-2. **Bi-encoder** (Phase 3) — score all chunks in the article; merge with BM25 → top-50.
-3. **Cross-encoder reranker** (Phase 4) — rerank top-50. Reportable neural result.
+1. **In-article BM25** — overlapping **1–3 sentence** windows (kept). Lexical baseline; gold is still `chunk_id`.
+2. **Extractive BERT** (next) — claim + article (or 512-token crops) → **one** start/end span. Metrics: exact match / span F1 (plus BM25 R@1 as baseline).
+3. **Verification** (later) — supported/refuted given the extracted span.
 
-Hard negatives are **in-article near-misses**, not random Wikipedia pages.
+Ranking models (e5-small, RRF, cross-encoder) are in `archive/scripts/`, not the main track.
 
 ---
 
 ## What we do not rebuild
 
-Open-domain 1.3M distractor corpus, 15M Lucene index, and claim-only full-Wikipedia eval as the main number. Those stay under `bm25-baseline-v1`.
+Open-domain distractor corpus, 15M Lucene index, and full-Wikipedia BM25. Those files are under `archive/`.

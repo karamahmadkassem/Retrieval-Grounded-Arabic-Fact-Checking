@@ -81,12 +81,13 @@ credentials.json
 # Results / outputs (regenerate from code)
 results/*
 !results/.gitkeep
-!results/bm25_baseline_findings.md
-!results/chunk_projection.txt
-!results/missing_chunks_sources.txt
 !results/evidence_localization_task.md
 !results/inarticle_bm25_findings.md
 !results/evidence_localization_results.md
+
+# Open-domain dumps, Lucene indexes, old e5 checkpoints
+archive/artifacts/*
+!archive/artifacts/.gitkeep
 
 # Large retrieval artifacts (regenerate from scripts; not versioned)
 data/arafa/bm25_index/
