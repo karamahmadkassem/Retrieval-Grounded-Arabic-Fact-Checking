@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections import Counter
+
 K_VALUES = [1, 5, 10]
 
 
@@ -41,6 +43,45 @@ def ranks_from_ids(retrieved_ids: list[str], gold_id: str, iou_threshold: float 
                 relaxed = i
                 break
     return exact, relaxed
+
+
+def token_f1(pred: str, gold: str) -> float:
+    """Whitespace-token F1 after Arabic diacritic strip (extractive QA)."""
+    from arabic_text_utils import normalize
+
+    pc = Counter(normalize(pred).split())
+    gc = Counter(normalize(gold).split())
+    if not pc and not gc:
+        return 1.0
+    overlap = sum((pc & gc).values())
+    if overlap == 0:
+        return 0.0
+    prec = overlap / sum(pc.values())
+    rec = overlap / sum(gc.values())
+    return 2 * prec * rec / (prec + rec) if (prec + rec) else 0.0
+
+
+def exact_match(pred: str, gold: str) -> bool:
+    from arabic_text_utils import normalize
+
+    return normalize(pred) == normalize(gold) and bool(normalize(gold))
+
+
+def summarize_spans(rows: list[dict]) -> dict | None:
+    n = len(rows)
+    if n == 0:
+        return None
+    em = sum(1 for r in rows if r.get("exact_match"))
+    f1 = sum(r.get("token_f1") or 0.0 for r in rows)
+    iou = sum(r.get("sentence_iou") or 0.0 for r in rows)
+    iou50 = sum(1 for r in rows if (r.get("sentence_iou") or 0.0) >= 0.5)
+    return {
+        "n": n,
+        "exact_match": round(em / n, 4),
+        "token_f1": round(f1 / n, 4),
+        "sentence_iou": round(iou / n, 4),
+        "sentence_iou_at_0.5": round(iou50 / n, 4),
+    }
 
 
 def summarize(rows: list[dict], rank_key: str = "rank") -> dict | None:

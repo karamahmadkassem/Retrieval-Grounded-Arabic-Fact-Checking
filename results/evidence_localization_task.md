@@ -61,7 +61,9 @@ Chunk lists stay in `wikipedia_chunks.json` (load by `source`); they are not dup
 ## Pipeline
 
 1. **In-article BM25** — overlapping **1–3 sentence** windows (kept). Lexical baseline; gold is still `chunk_id`.
-2. **Extractive BERT** (next) — claim + article (or 512-token crops) → **one** start/end span. Metrics: exact match / span F1 (plus BM25 R@1 as baseline).
+2. **Extractive BERT** — `scripts/train_extractive_bert.py`. Claim + 6-sentence crops of the article → one start/end span. Metrics: exact match, token F1, sentence IoU.
+   - Smoke: `py scripts/train_extractive_bert.py --smoke`
+   - Cluster: `sbatch scripts/slurm/train_extractive_bert.sh`
 3. **Verification** (later) — supported/refuted given the extracted span.
 
 Ranking models (e5-small, RRF, cross-encoder) are in `archive/scripts/`, not the main track.

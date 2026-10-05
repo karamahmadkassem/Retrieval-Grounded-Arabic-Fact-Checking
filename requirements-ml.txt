@@ -2,6 +2,4 @@
 # Next: extractive BERT. Old e5 ranking scripts live in archive/scripts/.
 
 transformers>=4.44
-datasets>=2.14
 tqdm>=4.66
-accelerate>=0.33.0
