@@ -4,7 +4,8 @@ train_extractive_bert.py
 SQuAD-style span extraction: claim + known article → one evidence span.
 
 Gold comes from localization gold_chunk_id (sentence_start–sentence_end).
-Training uses one 6-sentence crop centered on that gold span.
+Default train: sliding 6-sentence crops (stride 3) that contain the gold span.
+--train-crops gold_centered uses one crop per claim instead.
 Eval can score only BM25-selected crops (--bm25-crops).
 
 Usage:
@@ -233,36 +234,44 @@ def crop_with_gold(ex, crop_s, crop_e):
     return crop_text, cs, ce, local_starts
 
 
-def featurize_train(examples, tokenizer, max_length, crop_sents, crop_stride):
-    del crop_stride  # train uses one gold-centered crop, not a stride
+def train_crop_ranges(ex, crop_sents, crop_stride, mode: str):
+    n = len(ex["sentences"])
+    if mode == "gold_centered":
+        return [gold_centered_range(n, ex["sent_start"], ex["sent_end"], crop_sents)]
+    return list(iter_sentence_crops(n, crop_sents, crop_stride))
+
+
+def featurize_train(examples, tokenizer, max_length, crop_sents, crop_stride, train_crops):
     all_ids, all_mask, all_start, all_end = [], [], [], []
     n_keep = 0
     n_skip = 0
     for ex in tqdm(examples, desc="featurize"):
-        n = len(ex["sentences"])
-        crop_s, crop_e = gold_centered_range(
-            n, ex["sent_start"], ex["sent_end"], crop_sents,
-        )
-        packed = crop_with_gold(ex, crop_s, crop_e)
-        if packed is None:
+        kept_this = False
+        for crop_s, crop_e in train_crop_ranges(ex, crop_sents, crop_stride, train_crops):
+            packed = crop_with_gold(ex, crop_s, crop_e)
+            if packed is None:
+                continue
+            crop_text, cs, ce, _ = packed
+            enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
+            if enc is None:
+                continue
+            span = token_span_in_crop(enc, cs, ce)
+            if span is None:
+                continue
+            t0, t1 = span
+            all_ids.append(enc["input_ids"])
+            all_mask.append(enc["attention_mask"])
+            all_start.append(t0)
+            all_end.append(t1)
+            n_keep += 1
+            kept_this = True
+        if not kept_this:
             n_skip += 1
-            continue
-        crop_text, cs, ce, _ = packed
-        enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
-        if enc is None:
-            n_skip += 1
-            continue
-        span = token_span_in_crop(enc, cs, ce)
-        if span is None:
-            n_skip += 1
-            continue
-        t0, t1 = span
-        all_ids.append(enc["input_ids"])
-        all_mask.append(enc["attention_mask"])
-        all_start.append(t0)
-        all_end.append(t1)
-        n_keep += 1
-    print(f"Train windows with gold span: {n_keep} (skipped {n_skip})", flush=True)
+    print(
+        f"Train windows with gold span: {n_keep} "
+        f"(claims with no usable window: {n_skip}, mode={train_crops})",
+        flush=True,
+    )
     return {
         "input_ids": all_ids,
         "attention_mask": all_mask,
@@ -380,7 +389,12 @@ def train_model(args, train_examples, tokenizer):
     from transformers import AutoModelForQuestionAnswering, get_linear_schedule_with_warmup
 
     feats, n_keep = featurize_train(
-        train_examples, tokenizer, args.max_length, args.crop_sents, args.crop_stride
+        train_examples,
+        tokenizer,
+        args.max_length,
+        args.crop_sents,
+        args.crop_stride,
+        args.train_crops,
     )
     del train_examples
     gc.collect()
@@ -442,7 +456,7 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--data-dir", type=Path, default=Path("data/arafa/localization"))
     parser.add_argument("--chunks", type=Path, default=Path("data/arafa/wikipedia_chunks.json"))
-    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert_v3"))
+    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert_v4"))
     parser.add_argument("--eval-split", default="val")
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=8)
@@ -450,6 +464,12 @@ def main():
     parser.add_argument("--max-length", type=int, default=384)
     parser.add_argument("--crop-sents", type=int, default=6, help="Sentences per BERT crop")
     parser.add_argument("--crop-stride", type=int, default=3)
+    parser.add_argument(
+        "--train-crops",
+        choices=("sliding", "gold_centered"),
+        default="sliding",
+        help="sliding: all gold-containing 6-sent windows (smoke protocol); gold_centered: one crop",
+    )
     parser.add_argument("--max-answer-len", type=int, default=80)
     parser.add_argument("--max-train-claims", type=int, default=20000)
     parser.add_argument("--max-eval-claims", type=int, default=400)

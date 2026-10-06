@@ -17,7 +17,7 @@
 
 set -euo pipefail
 cd "$HOME/Retrieval-Grounded-Arabic-Fact-Checking"
-mkdir -p logs models/extractive_bert_v3
+mkdir -p logs models/extractive_bert_v4
 
 module purge
 module load cuda
@@ -40,14 +40,15 @@ fi
 nvidia-smi
 python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; n=torch.cuda.device_count(); print(torch.cuda.get_device_name(0), 'ngpu', n); assert n==1, 'expected 1 GPU, got %s' % n"
 
-# Mixed exact+fuzzy, one gold-centered crop, AraBERT-base, lr 1e-5, 20k claims.
-# Full-page eval on 400 val (same protocol as the mBERT smoke). Does not overwrite v2.
+# Smoke protocol: mBERT, mixed gold, sliding gold-containing crops, full-page 400 val.
+# 8k claims, lr 1e-5. Does not overwrite v2/v3.
 python scripts/train_extractive_bert.py \
-  --model aubmindlab/bert-base-arabertv2 \
+  --model bert-base-multilingual-cased \
+  --train-crops sliding \
   --epochs 1 \
   --batch-size 8 \
   --lr 1e-5 \
-  --max-train-claims 20000 \
+  --max-train-claims 8000 \
   --eval-split val \
   --max-eval-claims 400 \
-  --output-dir models/extractive_bert_v3
+  --output-dir models/extractive_bert_v4
