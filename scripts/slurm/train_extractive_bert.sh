@@ -30,10 +30,10 @@ fi
 nvidia-smi
 python -c "import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))"
 
-# Smoke first. After it works, drop --smoke for full train (still 1 epoch, val split).
+# Full train, 400-claim val (full val is ~8h of eval and will TIMEOUT).
 python scripts/train_extractive_bert.py \
   --model bert-base-multilingual-cased \
-  --smoke \
   --epochs 1 \
   --batch-size 8 \
-  --eval-split val
+  --eval-split val \
+  --max-eval-claims 400
