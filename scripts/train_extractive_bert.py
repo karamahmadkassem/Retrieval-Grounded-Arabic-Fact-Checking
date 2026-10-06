@@ -456,7 +456,7 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--data-dir", type=Path, default=Path("data/arafa/localization"))
     parser.add_argument("--chunks", type=Path, default=Path("data/arafa/wikipedia_chunks.json"))
-    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert_v4"))
+    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert_v5"))
     parser.add_argument("--eval-split", default="val")
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=8)
