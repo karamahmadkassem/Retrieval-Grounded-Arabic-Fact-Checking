@@ -15,7 +15,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import gc
 import json
+import os
 import random
 import sys
 from pathlib import Path
@@ -84,15 +86,21 @@ def char_span_to_sentences(starts: list[int], char_s: int, char_e: int) -> tuple
 
 def load_chunks_for_sources(chunks_path: Path, sources: set[str]) -> dict[str, list[dict]]:
     data = json.loads(chunks_path.read_text(encoding="utf-8"))
-    return {s: data[s]["chunks"] for s in sources if s in data}
+    out = {s: data[s]["chunks"] for s in sources if s in data}
+    del data
+    gc.collect()
+    return out
 
 
 def build_examples(rows, chunks_by_source):
     examples = []
     skipped = 0
+    sent_cache: dict[str, list[str] | None] = {}
     for r in rows:
-        chs = chunks_by_source.get(str(r["source"]), [])
-        sentences = sentences_from_chunks(chs)
+        sid = str(r["source"])
+        if sid not in sent_cache:
+            sent_cache[sid] = sentences_from_chunks(chunks_by_source.get(sid, []))
+        sentences = sent_cache[sid]
         span = parse_span(r["gold_chunk_id"])
         if not sentences or span is None:
             skipped += 1
@@ -101,25 +109,19 @@ def build_examples(rows, chunks_by_source):
         if sent_s < 0 or sent_e >= len(sentences) or sent_s > sent_e:
             skipped += 1
             continue
-        context, starts = join_sentences(sentences)
-        char_s, char_e = gold_char_span(sentences, starts, sent_s, sent_e)
-        gold_text = context[char_s:char_e]
-        if not gold_text.strip():
+        gold_text = " ".join(sentences[sent_s : sent_e + 1]).strip()
+        if not gold_text:
             skipped += 1
             continue
         examples.append({
             "final_id": r["final_id"],
             "source": r["source"],
-            "claim": r["claim"],
+            "claim": r["claim"] or "",
             "sentences": sentences,
-            "context": context,
-            "char_start": char_s,
-            "char_end": char_e,
             "gold_text": gold_text,
             "gold_chunk_id": r["gold_chunk_id"],
             "sent_start": sent_s,
             "sent_end": sent_e,
-            "starts": starts,
             "gold_match_type": r["gold_match_type"],
             "judgement": r["judgement"],
         })
@@ -152,7 +154,9 @@ def clip_claim(tokenizer, claim: str, max_length: int, min_context: int = 64) ->
 def encode_crop(tokenizer, claim, crop_text, max_length):
     if not (crop_text or "").strip():
         return None
-    claim = clip_claim(tokenizer, claim, max_length)
+    claim = clip_claim(tokenizer, claim or "", max_length)
+    if not claim.strip():
+        claim = "?"
     try:
         return tokenizer(
             claim,
@@ -170,7 +174,10 @@ def token_span_in_crop(enc, gold_start, gold_end):
     input_ids = enc["input_ids"]
     offsets = enc["offset_mapping"]
     seq = enc.sequence_ids()
-    ctx_idx = [j for j, s in enumerate(seq) if s == 1]
+    ctx_idx = [
+        j for j, s in enumerate(seq)
+        if s == 1 and offsets[j] != (0, 0)
+    ]
     if not ctx_idx:
         return None
     c0, c1 = ctx_idx[0], ctx_idx[-1]
@@ -196,7 +203,11 @@ def crop_with_gold(ex, crop_s, crop_e):
     crop_text, local_starts = join_sentences(local)
     loc_s = ex["sent_start"] - crop_s
     loc_e = ex["sent_end"] - crop_s
+    if loc_s < 0 or loc_e >= len(local) or loc_s > loc_e:
+        return None
     cs, ce = gold_char_span(local, local_starts, loc_s, loc_e)
+    if ce <= cs:
+        return None
     return crop_text, cs, ce, local_starts
 
 
@@ -248,7 +259,7 @@ def predict_example(model, tokenizer, ex, max_length, crop_sents, crop_stride, m
         end_l = out.end_logits[0].cpu()
         seq = enc.sequence_ids()
         offsets = enc["offset_mapping"]
-        ctx = [j for j, s in enumerate(seq) if s == 1]
+        ctx = [j for j, s in enumerate(seq) if s == 1 and offsets[j] != (0, 0)]
         if not ctx:
             continue
         ctx_set = set(ctx)
@@ -317,9 +328,18 @@ def train_model(args, train_examples, tokenizer):
     feats, n_keep = featurize_train(
         train_examples, tokenizer, args.max_length, args.crop_sents, args.crop_stride
     )
+    del train_examples
+    gc.collect()
     if n_keep == 0:
         raise SystemExit("No training windows contained the gold span.")
     print("Loading QA model ...", flush=True)
+
+    ids = torch.tensor(feats["input_ids"], dtype=torch.long)
+    mask = torch.tensor(feats["attention_mask"], dtype=torch.long)
+    start_pos = torch.tensor(feats["start_positions"], dtype=torch.long)
+    end_pos = torch.tensor(feats["end_positions"], dtype=torch.long)
+    del feats
+    gc.collect()
 
     class FeatDS(TorchDataset):
         def __len__(self):
@@ -327,10 +347,10 @@ def train_model(args, train_examples, tokenizer):
 
         def __getitem__(self, i):
             return {
-                "input_ids": torch.tensor(feats["input_ids"][i], dtype=torch.long),
-                "attention_mask": torch.tensor(feats["attention_mask"][i], dtype=torch.long),
-                "start_positions": torch.tensor(feats["start_positions"][i], dtype=torch.long),
-                "end_positions": torch.tensor(feats["end_positions"][i], dtype=torch.long),
+                "input_ids": ids[i],
+                "attention_mask": mask[i],
+                "start_positions": start_pos[i],
+                "end_positions": end_pos[i],
             }
 
     use_cuda = torch.cuda.is_available()
@@ -339,21 +359,27 @@ def train_model(args, train_examples, tokenizer):
     model.to(device)
     loader = DataLoader(FeatDS(), batch_size=args.batch_size, shuffle=True)
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr)
-    steps = max(1, args.epochs * len(loader))
-    sched = get_linear_schedule_with_warmup(opt, min(50, steps // 10), steps)
+    n_steps = max(1, args.epochs * len(loader))
+    sched = get_linear_schedule_with_warmup(opt, min(50, n_steps // 10), n_steps)
     model.train()
-    print(f"Training {steps} steps on {device} ...", flush=True)
+    print(f"Training {n_steps} steps on {device} ...", flush=True)
+    step = 0
     for _ in range(args.epochs):
         for batch in loader:
+            step += 1
             batch = {k: v.to(device) for k, v in batch.items()}
             out = model(**batch)
             out.loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step()
             sched.step()
             opt.zero_grad()
+            if step == 1 or step % 200 == 0 or step == n_steps:
+                print(f"step {step}/{n_steps} loss={out.loss.item():.4f}", flush=True)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
+    print(f"Saved {args.output_dir}", flush=True)
     return model
 
 
@@ -378,6 +404,7 @@ def main():
     parser.add_argument("--eval-only", action="store_true")
     parser.add_argument("--checkpoint", type=Path, default=None)
     args = parser.parse_args()
+    os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
     if args.smoke:
         args.max_train_claims = args.max_train_claims or 2000
@@ -411,7 +438,9 @@ def main():
         model = AutoModelForQuestionAnswering.from_pretrained(str(path))
     else:
         train_examples, skip_t = build_examples(train_rows, chunks_by_source)
-        print(f"Train examples: {len(train_examples)} (skipped {skip_t})")
+        print(f"Train examples: {len(train_examples)} (skipped {skip_t})", flush=True)
+        del chunks_by_source, train_rows
+        gc.collect()
         model = train_model(args, train_examples, tokenizer)
 
     model.to(device)

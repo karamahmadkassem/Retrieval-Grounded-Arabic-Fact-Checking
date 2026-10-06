@@ -23,12 +23,22 @@ module purge
 module load cuda
 module load python/ai-4
 export PYTHONUNBUFFERED=1
+export TOKENIZERS_PARALLELISM=false
+export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
 if [ -z "${CUDA_VISIBLE_DEVICES:-}" ]; then
   export CUDA_VISIBLE_DEVICES=0
 fi
 
+free_kb=$(df -Pk "$HOME" | awk 'NR==2 {print $4}')
+echo "home_free_kb=${free_kb}"
+if [ "${free_kb}" -lt 3000000 ]; then
+  echo "Need at least 3GB free in \$HOME before training." >&2
+  df -h "$HOME"
+  exit 1
+fi
+
 nvidia-smi
-python -c "import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))"
+python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; n=torch.cuda.device_count(); print(torch.cuda.get_device_name(0), 'ngpu', n); assert n==1, 'expected 1 GPU, got %s' % n"
 
 # Full train, 400-claim val (full val is ~8h of eval and will TIMEOUT).
 python scripts/train_extractive_bert.py \
