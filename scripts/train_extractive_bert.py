@@ -139,15 +139,31 @@ def iter_sentence_crops(n: int, window: int, stride: int):
         i += stride
 
 
-def encode_crop(tokenizer, claim, crop_text, max_length):
-    return tokenizer(
-        claim,
-        crop_text,
-        truncation="only_second",
-        max_length=max_length,
-        return_offsets_mapping=True,
-        padding="max_length",
+def clip_claim(tokenizer, claim: str, max_length: int, min_context: int = 64) -> str:
+    """Keep the claim short enough that only_second truncation still has a context budget."""
+    special = tokenizer.num_special_tokens_to_add(pair=True)
+    q_max = max(8, max_length - special - min_context)
+    ids = tokenizer.encode(
+        claim, add_special_tokens=False, truncation=True, max_length=q_max,
     )
+    return tokenizer.decode(ids, skip_special_tokens=True)
+
+
+def encode_crop(tokenizer, claim, crop_text, max_length):
+    if not (crop_text or "").strip():
+        return None
+    claim = clip_claim(tokenizer, claim, max_length)
+    try:
+        return tokenizer(
+            claim,
+            crop_text,
+            truncation="only_second",
+            max_length=max_length,
+            return_offsets_mapping=True,
+            padding="max_length",
+        )
+    except Exception:
+        return None
 
 
 def token_span_in_crop(enc, gold_start, gold_end):
@@ -195,6 +211,8 @@ def featurize_train(examples, tokenizer, max_length, crop_sents, crop_stride):
                 continue
             crop_text, cs, ce, _ = packed
             enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
+            if enc is None:
+                continue
             span = token_span_in_crop(enc, cs, ce)
             if span is None:
                 continue
@@ -221,6 +239,8 @@ def predict_example(model, tokenizer, ex, max_length, crop_sents, crop_stride, m
         local = ex["sentences"][crop_s:crop_e]
         crop_text, local_starts = join_sentences(local)
         enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
+        if enc is None:
+            continue
         ids = torch.tensor([enc["input_ids"]], device=device)
         mask = torch.tensor([enc["attention_mask"]], device=device)
         out = model(input_ids=ids, attention_mask=mask)
