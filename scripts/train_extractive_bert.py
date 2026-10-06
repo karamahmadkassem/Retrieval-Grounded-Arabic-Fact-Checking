@@ -4,7 +4,8 @@ train_extractive_bert.py
 SQuAD-style span extraction: claim + known article → one evidence span.
 
 Gold comes from localization gold_chunk_id (sentence_start–sentence_end).
-Long pages are split into overlapping 6-sentence crops (stride 3) so BERT-base (384 tokens) sees the gold span.
+Training uses one 6-sentence crop centered on that gold span.
+Eval can score only BM25-selected crops (--bm25-crops).
 
 Usage:
     py scripts/train_extractive_bert.py --smoke
@@ -33,7 +34,7 @@ from localization_metrics import (
     summarize_spans,
     token_f1,
 )
-from run_inarticle_bm25_eval import load_jsonl
+from run_inarticle_bm25_eval import BM25Article, load_jsonl
 
 DEFAULT_MODEL = "bert-base-multilingual-cased"
 
@@ -128,6 +129,27 @@ def build_examples(rows, chunks_by_source):
     return examples, skipped
 
 
+def gold_centered_range(n: int, sent_s: int, sent_e: int, window: int) -> tuple[int, int]:
+    """One crop that contains the gold span, centered on it when it fits."""
+    span_len = sent_e - sent_s + 1
+    width = max(window, span_len)
+    if n <= width:
+        return 0, n
+    mid = (sent_s + sent_e) // 2
+    start = mid - width // 2
+    start = max(0, min(start, n - width))
+    if start > sent_s:
+        start = max(0, sent_s)
+    end = start + width
+    if end > n:
+        end = n
+        start = max(0, end - width)
+    if end <= sent_e:
+        end = min(n, sent_e + 1)
+        start = max(0, end - width)
+    return start, end
+
+
 def iter_sentence_crops(n: int, window: int, stride: int):
     if n <= window:
         yield 0, n
@@ -212,28 +234,35 @@ def crop_with_gold(ex, crop_s, crop_e):
 
 
 def featurize_train(examples, tokenizer, max_length, crop_sents, crop_stride):
+    del crop_stride  # train uses one gold-centered crop, not a stride
     all_ids, all_mask, all_start, all_end = [], [], [], []
     n_keep = 0
+    n_skip = 0
     for ex in tqdm(examples, desc="featurize"):
         n = len(ex["sentences"])
-        for crop_s, crop_e in iter_sentence_crops(n, crop_sents, crop_stride):
-            packed = crop_with_gold(ex, crop_s, crop_e)
-            if packed is None:
-                continue
-            crop_text, cs, ce, _ = packed
-            enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
-            if enc is None:
-                continue
-            span = token_span_in_crop(enc, cs, ce)
-            if span is None:
-                continue
-            t0, t1 = span
-            all_ids.append(enc["input_ids"])
-            all_mask.append(enc["attention_mask"])
-            all_start.append(t0)
-            all_end.append(t1)
-            n_keep += 1
-    print(f"Train windows with gold span: {n_keep}", flush=True)
+        crop_s, crop_e = gold_centered_range(
+            n, ex["sent_start"], ex["sent_end"], crop_sents,
+        )
+        packed = crop_with_gold(ex, crop_s, crop_e)
+        if packed is None:
+            n_skip += 1
+            continue
+        crop_text, cs, ce, _ = packed
+        enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
+        if enc is None:
+            n_skip += 1
+            continue
+        span = token_span_in_crop(enc, cs, ce)
+        if span is None:
+            n_skip += 1
+            continue
+        t0, t1 = span
+        all_ids.append(enc["input_ids"])
+        all_mask.append(enc["attention_mask"])
+        all_start.append(t0)
+        all_end.append(t1)
+        n_keep += 1
+    print(f"Train windows with gold span: {n_keep} (skipped {n_skip})", flush=True)
     return {
         "input_ids": all_ids,
         "attention_mask": all_mask,
@@ -242,11 +271,27 @@ def featurize_train(examples, tokenizer, max_length, crop_sents, crop_stride):
     }, n_keep
 
 
-@torch.no_grad()
-def predict_example(model, tokenizer, ex, max_length, crop_sents, crop_stride, max_answer_len, device):
-    best = None
+def predict_crops(ex, crop_sents, crop_stride, bm25_top):
     n = len(ex["sentences"])
-    for crop_s, crop_e in iter_sentence_crops(n, crop_sents, crop_stride):
+    if bm25_top and n:
+        ids = [str(i) for i in range(n)]
+        ranked = BM25Article(ids, ex["sentences"]).rank(ex["claim"], top_k=bm25_top)
+        ranges = []
+        seen = set()
+        for sid in ranked:
+            a, b = gold_centered_range(n, int(sid), int(sid), crop_sents)
+            if (a, b) not in seen:
+                seen.add((a, b))
+                ranges.append((a, b))
+        if ranges:
+            return ranges
+    return list(iter_sentence_crops(n, crop_sents, crop_stride))
+
+
+@torch.no_grad()
+def predict_example(model, tokenizer, ex, max_length, crop_sents, crop_stride, max_answer_len, device, bm25_top=0):
+    best = None
+    for crop_s, crop_e in predict_crops(ex, crop_sents, crop_stride, bm25_top):
         local = ex["sentences"][crop_s:crop_e]
         crop_text, local_starts = join_sentences(local)
         enc = encode_crop(tokenizer, ex["claim"], crop_text, max_length)
@@ -295,6 +340,7 @@ def evaluate(model, tokenizer, examples, args, device):
         pred, sent = predict_example(
             model, tokenizer, ex, args.max_length, args.crop_sents,
             args.crop_stride, args.max_answer_len, device,
+            bm25_top=args.bm25_top if args.bm25_crops else 0,
         )
         gold_s, gold_e = ex["sent_start"], ex["sent_end"]
         if sent is None:
@@ -318,7 +364,15 @@ def evaluate(model, tokenizer, examples, args, device):
             "gold_sent": [gold_s, gold_e],
             "pred_sent": list(sent) if sent else None,
         })
-    return summarize_spans(rows), rows
+    summary = summarize_spans(rows) or {}
+    by_type = {}
+    for kind in ("exact", "fuzzy"):
+        part = summarize_spans([r for r in rows if r.get("gold_match_type") == kind])
+        if part:
+            by_type[kind] = part
+    if by_type:
+        summary["by_gold_match_type"] = by_type
+    return summary, rows
 
 
 def train_model(args, train_examples, tokenizer):
@@ -388,32 +442,38 @@ def main():
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--data-dir", type=Path, default=Path("data/arafa/localization"))
     parser.add_argument("--chunks", type=Path, default=Path("data/arafa/wikipedia_chunks.json"))
-    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert"))
+    parser.add_argument("--output-dir", type=Path, default=Path("models/extractive_bert_v2"))
     parser.add_argument("--eval-split", default="val")
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=8)
-    parser.add_argument("--lr", type=float, default=3e-5)
+    parser.add_argument("--lr", type=float, default=1e-5)
     parser.add_argument("--max-length", type=int, default=384)
     parser.add_argument("--crop-sents", type=int, default=6, help="Sentences per BERT crop")
     parser.add_argument("--crop-stride", type=int, default=3)
     parser.add_argument("--max-answer-len", type=int, default=80)
-    parser.add_argument("--max-train-claims", type=int, default=None)
-    parser.add_argument("--max-eval-claims", type=int, default=None)
+    parser.add_argument("--max-train-claims", type=int, default=20000)
+    parser.add_argument("--max-eval-claims", type=int, default=400)
+    parser.add_argument("--bm25-top", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--smoke", action="store_true", help="2000 train / 400 val")
+    parser.add_argument("--exact-only", action="store_true", help="Train on exact gold spans only")
+    parser.add_argument("--bm25-crops", action="store_true", help="Score only BM25-selected crops at eval")
     parser.add_argument("--eval-only", action="store_true")
     parser.add_argument("--checkpoint", type=Path, default=None)
     args = parser.parse_args()
     os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
     if args.smoke:
-        args.max_train_claims = args.max_train_claims or 2000
-        args.max_eval_claims = args.max_eval_claims or 400
+        args.max_train_claims = 2000
+        args.max_eval_claims = 400
 
     from transformers import AutoModelForQuestionAnswering, AutoTokenizer
 
     train_rows = load_jsonl(args.data_dir / "train.jsonl")
     eval_rows = load_jsonl(args.data_dir / f"{args.eval_split}.jsonl")
+    if args.exact_only and not args.eval_only:
+        train_rows = [r for r in train_rows if r.get("gold_match_type") == "exact"]
+        print(f"Exact-only train pool: {len(train_rows)}", flush=True)
     rng = random.Random(args.seed)
     if args.max_train_claims and len(train_rows) > args.max_train_claims:
         rng.shuffle(train_rows)
@@ -448,7 +508,7 @@ def main():
         print("No eval examples; skipped eval.", flush=True)
         return
     summary, results = evaluate(model, tokenizer, eval_examples, args, device)
-    out_path = args.data_dir / f"extractive_bert_{args.eval_split}.json"
+    out_path = args.data_dir / f"{args.output_dir.name}_{args.eval_split}.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(
             {"summary": summary, "model": args.model, "results": results},

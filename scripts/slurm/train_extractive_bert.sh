@@ -17,7 +17,7 @@
 
 set -euo pipefail
 cd "$HOME/Retrieval-Grounded-Arabic-Fact-Checking"
-mkdir -p logs models/extractive_bert
+mkdir -p logs models/extractive_bert_v2
 
 module purge
 module load cuda
@@ -40,10 +40,16 @@ fi
 nvidia-smi
 python -c "import torch; assert torch.cuda.is_available(), 'no GPU'; n=torch.cuda.device_count(); print(torch.cuda.get_device_name(0), 'ngpu', n); assert n==1, 'expected 1 GPU, got %s' % n"
 
-# Full train, 400-claim val (full val is ~8h of eval and will TIMEOUT).
+# 20k exact claims, one gold-centered crop, lr 1e-5, BM25-limited eval.
+# Does not overwrite models/extractive_bert/ from job 918010.
 python scripts/train_extractive_bert.py \
   --model bert-base-multilingual-cased \
   --epochs 1 \
   --batch-size 8 \
+  --lr 1e-5 \
+  --exact-only \
+  --bm25-crops \
+  --max-train-claims 20000 \
   --eval-split val \
-  --max-eval-claims 400
+  --max-eval-claims 400 \
+  --output-dir models/extractive_bert_v2
